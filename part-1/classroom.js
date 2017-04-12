@@ -1,17 +1,24 @@
 var Classroom = function(students = []) {
   this.students = students;
   this.find = function(searchName) {
-    // console.log(this.students);
+
+
+    this.students.find(nameMatch);
+
+    function nameMatch(searchName) {
+      return this.student.name === searchName;
+    }
+
     // var matches = this.students.filter(function(student) {
     //   return student.name === searchName;
     // });
     // return matches;
-
-    function findCherries(fruit) { 
-    return this.student.name === searchName;
-}
-
-    console.log(this.students.find());
-// { name: 'cherries', quantity: 5 }
   }
+
+  this.honorRollStudents = function(){
+  var honorRoll = this.students.filter(function(student) {
+    return student.averageScore() >= 95;
+  });
+  return honorRoll;
+}
 }

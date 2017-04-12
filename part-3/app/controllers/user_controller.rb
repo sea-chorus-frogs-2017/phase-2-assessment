@@ -30,6 +30,10 @@ get '/users/login' do
   end
 end
 
+get '/users/:id' do
+  erb :'users/show'
+end
+
 post '/users/login' do
   user = User.authenticate(params['user']['email'], params['user']['password'])
   if user

@@ -10,7 +10,7 @@
   <% end %>
   <hr>
 
-  <form action='/users/<%= @user.id %>/items' method='post'>
+  <form action='/users/<%= @user.id %>/items/<%= @item.id %>' method='post'>
     <input name='_method' type='hidden' value='put' />
     Item Name:<br>
       <input type='text' name='item[name]' value='<%= @item.name %>'>

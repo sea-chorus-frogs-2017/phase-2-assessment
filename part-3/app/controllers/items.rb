@@ -10,8 +10,20 @@ post '/users/:id/items' do
     redirect "/users/#{params[:id]}"
   else
     @user = User.find(params[:id])
-    @incorrect_item = "Incorrect Auction/Item"
+    @incorrect_item = "Incorrectly filled out form"
     erb :'items/new'
+  end
+end
+
+put '/users/:user_id/items/:id' do
+  params[:item][:user_id] = params[:user_id]
+  @item = Item.find(params[:id])
+  if @item.update(params[:item])
+    redirect "/users/#{params[:user_id]}"
+  else
+    @user = User.find(params[:id])
+    @incorrect_item = "Incorrectly filled out form"
+    erb :'items/edit'
   end
 end
 

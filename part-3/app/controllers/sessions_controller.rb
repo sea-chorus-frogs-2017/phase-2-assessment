@@ -4,5 +4,11 @@ end
 
 post '/sessions' do
   @user = User.find(params[:email])
-  @user.authenticate(password_input)
+
+  if @user
+    if @user.authenticate?(password_input)
+
+  else
+
+  end
 end

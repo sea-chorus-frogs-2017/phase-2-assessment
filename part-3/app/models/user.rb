@@ -3,6 +3,8 @@ require 'bcrypt'
 class User < ActiveRecord::Base
   include BCrypt
 
+  has_many :items
+
   validates :email, presence: true, uniqueness: true
   validates :username, presence: true, uniqueness: true
 

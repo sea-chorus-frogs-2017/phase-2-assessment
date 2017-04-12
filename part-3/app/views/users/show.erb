@@ -5,7 +5,11 @@
   <span id="new-auction-link"><a href="/auctions/new">add an auction</a></span>
   <ul>
     <% if @user.auctions != [] %>
-
-    <% %>
+      <% @user.auctions.each do |auction| %>
+        <li>
+          <%= auction.name %>
+        </li>
+      <% end %>
+    <% end %>
   </ul>
 </div>

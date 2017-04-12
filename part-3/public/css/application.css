@@ -10,6 +10,8 @@ nav a {
 .container {
   margin: auto;
   border-style: solid;
+  max-width: 500px;
+  min-width: 300px;
 }
 
 .form {

@@ -7,7 +7,7 @@ post '/sessions' do
   if @user
     session[:user_id] = @user.id
   end
-  redirect to '/'
+  redirect to "/users/#{@user.id}"
 end
 
 get '/sessions/logout' do

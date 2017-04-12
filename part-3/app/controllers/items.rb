@@ -5,6 +5,7 @@ end
 
 post '/users/:id/items' do
   params[:item][:user_id] = params[:id]
+  p params
   Item.create(params[:item])
   redirect "/users/#{params[:id]}"
 end

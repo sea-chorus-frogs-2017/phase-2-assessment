@@ -6,6 +6,7 @@ class CreateItems < ActiveRecord::Migration
       t.datetime :starts_at, null: false
       t.datetime :ends_at, null:false
       t.string :description, null: false
+      t.integer :user_id, null: false
 
       t.timestamps null: false
     end

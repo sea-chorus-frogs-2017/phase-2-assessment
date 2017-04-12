@@ -1,20 +1,21 @@
-<center>
+<div class='form'>
+  <center>
+    <% if @user && @user.errors.any? %>
+      <div id="registration-errors"
+        <% @user.errors.full_messages.each do |error| %>
+          <p><%= error %></p>
+        <% end %>
+      </div>
+    <% end %>
 
-  <% if @user && @user.errors.any? %>
-    <div id="registration-errors"
-      <% @user.errors.full_messages.each do |error| %>
-        <p><%= error %></p>
-      <% end %>
-    </div>
-  <% end %>
-
-  <form id="registration-form" action='/users' method="post">
-    <label>Email</label><br>
-    <input type='text' name='user[email]' placeholder="Email"><br><br>
-    <label>Username</label><br>
-    <input type='text' name='user[username]' placeholder="Username"><br><br>
-    <label>Password</label><br>
-    <input type='password' name='user[password]' placeholder="Password"><br><br>
-    <input type='submit' value='Register User'>
-  </form>
-</center>
+    <form id="registration-form" action='/users' method="post">
+      <label>Email</label><br>
+      <input type='text' name='user[email]' placeholder="Email"><br><br>
+      <label>Username</label><br>
+      <input type='text' name='user[username]' placeholder="Username"><br><br>
+      <label>Password</label><br>
+      <input type='password' name='user[password]' placeholder="Password"><br><br>
+      <input type='submit' value='Register User'>
+    </form>
+  </center>
+</div>

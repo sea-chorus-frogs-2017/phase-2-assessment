@@ -10,3 +10,10 @@ body {
 #registration-form {
   display: block;
 }
+
+.form {
+  border: 1px solid black;
+  width: 30%;
+  margin: auto;
+  padding: 20px;
+}

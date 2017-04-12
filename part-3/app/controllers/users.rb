@@ -9,3 +9,5 @@ post '/users' do
   end
 
 end
+
+get '/users/:id'

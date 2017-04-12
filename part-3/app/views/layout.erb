@@ -24,8 +24,12 @@
   </center>
     <% if !session[:user] %>
       <a class='register-link' href='/register' >Register</a>
+      <text> | </text>
+      <a class='login-link' href='/login' >Log In</a>
     <% else %>
       <a class='user-link' href=''><%= session[:user].username %></a>
+      <text> | </text>
+      <a class='logout-link' href='/' >Log Out</a>
     <% end %>
 </div>
   <%= yield %>

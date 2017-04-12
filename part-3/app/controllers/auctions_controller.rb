@@ -29,5 +29,8 @@ put '/auctions/:id' do
 end
 
 delete '/auctions/:id' do
-  "You did it! Now do it better!"
+  auction = Auction.find(params[:id])
+  auction.destroy
+
+  redirect "/users/#{session[:user_id]}"
 end

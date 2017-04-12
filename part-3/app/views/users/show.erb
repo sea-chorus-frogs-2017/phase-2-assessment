@@ -7,7 +7,7 @@
       <% @user.auctions.each do |auction| %>
         <li>
           <%= auction.name %> <a href="/auctions/<%= auction.id %>/edit">edit</a>
-          <form class="delete-form">
+          <form class="delete-form" action="/auctions/<%= auction.id %>" method="post">
             <input type="hidden" name="_method" value="delete">
             <input class="delete-button" type="submit" name="delete" value="delete">
           </form>

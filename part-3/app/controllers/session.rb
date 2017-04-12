@@ -1,6 +1,6 @@
 # Retrieves login form page
 get '/session/new' do
-  erb :'session/new'
+  erb :'/session/new'
 end
 
 # Creates session['user_id']
@@ -11,7 +11,7 @@ post '/session' do
     redirect '/'
   else
     @incorrect_login = "Incorrect Login/Password"
-    erb :'session/new'
+    erb :'/session/new'
   end
 end
 

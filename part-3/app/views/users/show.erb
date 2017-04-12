@@ -11,6 +11,7 @@
       <a href="/auctions/<%= auction.id %>/edit">edit</a>
       <form class="faux-form" method="post" action="/auctions">
         <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="auction[id]" value="<%= auction.id %>">
         <input class="faux-link" type="submit" value="delete">
       </form>
       </li>

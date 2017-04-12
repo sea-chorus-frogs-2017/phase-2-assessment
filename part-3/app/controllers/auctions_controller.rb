@@ -22,3 +22,8 @@ put '/auctions/:id' do
   auction.update(params[:auction])
   redirect to "/users/#{session[:user_id]}"
 end
+
+delete '/auctions' do
+  Auction.destroy(params[:auction][:id])
+  redirect to "/users/#{session[:user_id]}"
+end

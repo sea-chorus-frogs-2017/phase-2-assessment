@@ -13,20 +13,20 @@ $( document ).ready(function() {
   });
   $('#post-list').on("submit", function(event){
     event.preventDefault();
+    console.log(event)
+    console.log(event.target)
     var fullUrl = event.target.action;
     var postUrl = fullUrl.substring(fullUrl.indexOf('/posts/') +1 );
-    console.log(postUrl)
-    var findId = /\d{2}/;
+    var findId = /\d/;
     var postId = postUrl.match(findId)[0]
-    console.log(postId)
     $.ajax({
       url: postUrl,
       type: 'PUT',
-      data: postUrl
+      data: postId
     }).done(function(response){
-      console.log(response)
+      var pointSpan = $(event.target).siblings('.post-details').children()
+      console.log(response.points)
+      $(pointSpan[1]).text(response.points + ' likes')
     })
-    debugger
   })
-
 });

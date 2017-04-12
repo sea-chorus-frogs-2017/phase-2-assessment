@@ -1,3 +1,5 @@
+require 'sinatra/json'
+
 get "/posts" do
   @posts = Post.order("created_at DESC")
   erb :'posts/index'
@@ -24,8 +26,10 @@ get "/posts/:id" do
 end
 
 put "/posts/:id/like" do
-  @post = Post.find()
   @post = Post.find(params[:id])
   @post.increment!(:likes_count)
-  redirect "/posts/#{@post.id}"
+  json post = {
+    post: @post,
+    points: @post.likes_count
+  }
 end

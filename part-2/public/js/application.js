@@ -9,10 +9,21 @@ $(document).ready(function(){
       data: formData
     });
     request.done(function(response){
-      // console.log(response);
       $('#post-list').prepend(response);
     });
   });
 
+  $('.new-post-like-form').on('submit', function(event){
+    event.preventDefault();
+    var that = this;
+    var formAction = $(this).attr('action')
+    var request = $.ajax({
+      url: formAction,
+      method: 'PUT',
+    });
+    request.done(function(response){
+      $(that).parent().html(response);
+    });
+  });
 
 });

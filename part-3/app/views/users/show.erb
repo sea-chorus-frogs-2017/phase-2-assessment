@@ -6,9 +6,7 @@
     <% if @user.auctions != [] %>
       <% @user.auctions.each do |auction| %>
         <li>
-          <p>
-            <%= auction.name %> <a href="/auctions/<%= auction.id %>">edit</a>
-          </p>
+          <%= auction.name %> <a href="/auctions/<%= auction.id %>/edit">edit</a>
         </li>
       <% end %>
     <% end %>

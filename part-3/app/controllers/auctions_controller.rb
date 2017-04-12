@@ -12,3 +12,8 @@ post '/auctions' do
     erb :"auctions/new"
   end
 end
+
+get '/auctions/:id/edit' do
+  @auction = Auction.find(params[:id])
+  erb :'auctions/edit'
+end

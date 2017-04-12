@@ -10,7 +10,6 @@ Student.prototype.averageScore = function(){
 
 Student.prototype.letterGrade = function(){
   var numberGrade = this.averageScore();
-  console.log(numberGrade);
   if(numberGrade >= 90){
     return "A";
   } else if (numberGrade >= 80){

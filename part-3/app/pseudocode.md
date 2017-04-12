@@ -35,5 +35,7 @@
 
 ## Release 5 - Deleting items
 -as a user, I can delete items
--as a user,
+-as a user, deleting takes me back to profile page
+
+## If you've made it here, congrats...
 

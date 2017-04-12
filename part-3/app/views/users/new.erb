@@ -1,4 +1,14 @@
-<div class="register container">
+<div class="center register container">
+  <h2>Register</h2>
+
+  <% if @user && @user.errors.any? %>
+      <ul>
+        <% @user.errors.full_messages.each do |error| %>
+          <li class="errors"><%= error %></li>
+        <% end %>
+      </ul>
+  <% end %>
+
   <form action="/users" method="POST">
     <div class="form-group">
       <input class="form-control" type="text" name="user[username]" placeholder="Username">

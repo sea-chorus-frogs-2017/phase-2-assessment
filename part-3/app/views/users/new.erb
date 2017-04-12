@@ -1,7 +1,7 @@
 <div class='form'>
   <center>
     <% if @user && @user.errors.any? %>
-      <div id="registration-errors"
+      <div id="registration-errors">
         <% @user.errors.full_messages.each do |error| %>
           <p><%= error %></p>
         <% end %>

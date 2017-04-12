@@ -7,6 +7,10 @@ body {
   color: red;
 }
 
+#login-errors {
+  color: red;
+}
+
 #registration-form {
   display: block;
 }

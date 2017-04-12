@@ -20,8 +20,16 @@
 <body>
   <h1>DBC Auction!</h1>
   <div>
-    <a id="login" href="/session/new">login</a> |
-    <a id="register" href="/users/new">register</a>
+    <% if session[:user_id] %>
+      <a id="current-user" href="/users/<%= session[:user_id] %>"><%= @user.username %></a> |
+      <form id='logout' action='/sessions/<%= session[:user_id] %>' method='POST'>
+        <input type='hidden' name='_method' value='delete'>
+        <input type='submit' value='logout'>
+      </form>
+    <% else %>
+      <a id="login" href="/sessions/new">login</a> |
+      <a id="register" href="/users/new">register</a>
+    <% end %>
   </div>
   <%= yield %>
 </body>

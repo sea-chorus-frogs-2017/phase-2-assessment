@@ -24,8 +24,8 @@
       <a href="/sessions/logout" class="session-link">Logout</a>
       <a href="/users/<%= session[:user_id] %>" class="session-link"><%= get_username(session[:user_id]) %></a>
     <% else %>
-      <a href="/users/new" class="session-link">Register</a>
       <a href="/sessions/login" class="session-link">Login</a>
+      <a href="/users/new" class="session-link">Register</a>
     <% end %>
   </nav>
   <%= yield %>

@@ -9,11 +9,11 @@ nav a {
 
 .container {
   margin: auto;
+  border-style: solid;
 }
 
 .form {
   padding: 20px;
-  border-style: solid;
   max-width: 450px;
   min-width: 300px;
 }

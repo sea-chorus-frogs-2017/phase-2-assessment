@@ -1,17 +1,21 @@
 var Student = function(args) {
-  this.firstName = args["firstName"];
-  this.scores = args["scores"]
+  this.firstName = args.firstName;
+  this.scores = args.scores;
+};
+
+Student.prototype.averageScore = function() {
   var totalScore = this.scores.reduce(function(total, score) {
     return total + score;
   });
-  this.averageScore = function() {
-    return Math.floor(totalScore / this.scores.length);
-  };
-  this.letterGrade = function() {
-    if (this.averageScore() >= 90) { return "A" } else
-    if (this.averageScore() >= 80) { return "B" } else
-    if (this.averageScore() >= 70) { return "C" } else
-    if (this.averageScore() >= 60) { return "D" } else
-    return "F";
+  return Math.floor(totalScore / this.scores.length);
+};
+
+Student.prototype.letterGrade = function() {
+  var scores = [[90, "A"], [80, "B"], [70, "C"], [60, "D"], [0, "F"]];
+  for (var i = 0, length = scores.length; i < length; i++) {
+    var score = scores[i];
+    if (this.averageScore() >= score[0]) {
+      return score[1];
+    }
   }
-}
+};

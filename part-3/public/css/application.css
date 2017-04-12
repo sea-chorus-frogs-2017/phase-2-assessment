@@ -1,0 +1,29 @@
+nav {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+nav a {
+  margin-left: 8px;
+}
+
+.container {
+  margin: auto;
+}
+
+.registration-form {
+  padding: 20px;
+  border-style: solid;
+  max-width: 450px;
+  min-width: 300px;
+}
+
+.registration-form div {
+  padding: 5px;
+  margin: 5px;
+}
+
+.session-link {
+  float: right;
+  margin-right:10px;
+}

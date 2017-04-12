@@ -22,8 +22,8 @@ post '/auctions' do
 end
 
 get '/auctions/:id/edit' do
-  if session[:user_id]
-    @auction = Auction.find(params[:id])
+  @auction = Auction.find(params[:id])
+  if session[:user_id] == @auction.user_id
     erb :'auctions/edit'
   else
     redirect '/users/new'
@@ -31,8 +31,8 @@ get '/auctions/:id/edit' do
 end
 
 put '/auctions/:id' do
-  if session[:user_id]
-    @auction = Auction.find(params[:id])
+  @auction = Auction.find(params[:id])
+  if session[:user_id] == @auction.user_id
     @auction.update(params[:auction])
     if @auction.save
       redirect "/users/#{session[:user_id]}"
@@ -45,8 +45,8 @@ put '/auctions/:id' do
 end
 
 delete '/auctions/:id' do
-  if session[:user_id]
-    auction = Auction.find(params[:id])
+  auction = Auction.find(params[:id])
+  if session[:user_id] == auction.user_id
     auction.destroy
 
     redirect "/users/#{session[:user_id]}"

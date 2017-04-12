@@ -25,7 +25,3 @@ var Student = function({firstName, scores}) {
   };
 }
 
-student = new Student({firstName: "Lysette", scores: [100, 100, 100, 4, 100]})
-console.log(student.averageScore());
-console.log(student.letterGrade());
-

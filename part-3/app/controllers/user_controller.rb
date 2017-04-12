@@ -7,3 +7,12 @@ post '/users' do
   session[:user_id] = @user.id
   redirect to '/'
 end
+
+get '/users/:id' do
+  if session[:user_id]
+    @user = User.find(params[:id])
+    erb :'users/show'
+  else
+    redirect '/'
+  end
+end

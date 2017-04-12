@@ -19,15 +19,23 @@
 </head>
 <body>
   <nav>
+    <a href='/'>GO HOME</a>
     <div>
       <% if session[:user_id] %>
         <% @user = User.find(session[:user_id])%>
-        <%= @user.username %> |
+        <a href="/users/<%= session[:user_id] %> ">
+          <%= @user.username %>
+        </a>
+
         <%= erb :'partials/_logout' %>
     </div>
     <% else %>
-      <a href="/login">LOGIN</a>
-      <a href="users/new">REGISTER</a>
+      <div>
+        <a href="/login">LOGIN</a>
+      </div>
+      <div>
+        <a href="users/new">REGISTER</a>
+      </div>
     <% end %>
   </nav>
   <%= yield %>

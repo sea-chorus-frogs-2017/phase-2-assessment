@@ -3,9 +3,10 @@ get '/users/new' do
 end
 
 post '/users' do
-  @user = user.new(params[:user])
-  if @user && @user.save
-
+  @user = User.new(params[:user])
+  if @user.save
+    redirect '/'
+  else
+    erb :"/users/new"
   end
-  redirect '/'
 end

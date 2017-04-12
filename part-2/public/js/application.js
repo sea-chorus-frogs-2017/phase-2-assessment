@@ -20,7 +20,8 @@ $(document).ready(function() {
   $("#post-list").on("submit", function(e){
     e.preventDefault();
     var url = $(event.target).attr("action");
-    var targetSpan = $(event.target).siblings().find(".post-detail")[1]
+    var targetSpan = $(event.target).siblings().find(".post-detail")[1];
+    $(event.target).find(".submit").prop("disabled", true);
     $.ajax({
       url: url,
       method: 'PUT'

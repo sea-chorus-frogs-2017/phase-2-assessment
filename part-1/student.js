@@ -28,7 +28,6 @@ Student.prototype.letterGrade = function() {
       return 'D';
       break;
     default:
-      return 'E';
-      break;
+      return 'F';
   }
 }

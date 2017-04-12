@@ -1,7 +1,8 @@
 var Student = function(name, scores) {
-  this.firstName = "Lysette"
-  this.scores = [100, 100, 100, 4, 100]
-};
+  this.firstName = name.firstName;
+  this.scores = name.scores;
+}
+// I'm not sure what was going on here. For some reason name was showing the object of a student and so in order for me to access the name and scores I had to call on the name object and firstName and scores of that name.
 
 Student.prototype.averageScore = function() {
   var sum = this.scores.reduce(add, 0)

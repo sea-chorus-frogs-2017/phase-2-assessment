@@ -4,5 +4,6 @@ end
 
 post '/users' do
   @user = User.create(params[:user])
-  redirect to "/"
+  session[:user_id] = @user.id
+  redirect to '/'
 end

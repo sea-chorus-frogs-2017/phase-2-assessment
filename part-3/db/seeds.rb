@@ -1,10 +1,9 @@
 require 'faker'
 
-User.delete_all
+User.destroy_all
 
 100.times do
-  User.create!( name: Faker::Name.name,
-                username: Faker::Internet.user_name,
+  User.create!( username: Faker::Internet.user_name,
                 email: Faker::Internet.email,
-                password: "password" )
+                password: "pwd" )
 end

@@ -67,3 +67,16 @@ nav h1 {
 .navbar-link {
   padding: 5px;
 }
+
+.faux-link {
+  display: inline;
+  background: none;
+  border-style: none;
+  color: blue;
+  text-decoration: underline;
+
+}
+
+.faux-form {
+  display: inline;
+}

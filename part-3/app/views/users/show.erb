@@ -7,7 +7,13 @@
   <ul class="auction-list">
     <% @user.auctions.each do |auction|%>
       <li class="auction-item">
-      <%= auction.name %> <a href="/auctions/<%= auction.id %>/edit">edit</a></li>
+      <%= auction.name %>
+      <a href="/auctions/<%= auction.id %>/edit">edit</a>
+      <form class="faux-form" method="post" action="/auctions">
+        <input type="hidden" name="_method" value="delete">
+        <input class="faux-link" type="submit" value="delete">
+      </form>
+      </li>
     <% end%>
   </ul>
 </div>

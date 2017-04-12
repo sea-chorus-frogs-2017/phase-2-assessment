@@ -1,4 +1,4 @@
-class Users < ActiveRecord::Base
+class User < ActiveRecord::Base
   validates_presence_of :email, { message: "An email is required." }
   validates_presence_of :username, { message: "A username is required." }
   validates_presence_of :password, { message: "A password is required." }

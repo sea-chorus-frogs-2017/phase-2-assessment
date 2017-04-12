@@ -28,6 +28,13 @@ get '/users/:user_id/items/:item_id/edit' do
   end
 end
 
-post 'users/:user_id/items/:item_id/' do
-  p params
+put '/users/:user_id/items/:item_id' do
+  @user = User.find(params[:user_id])
+  @item = Item.find(params[:item_id])
+  @item.attributes = params[:item]
+  if @item.save
+    redirect "/users/#{@user.id}"
+  else
+    erb :'items/edit'
+  end
 end

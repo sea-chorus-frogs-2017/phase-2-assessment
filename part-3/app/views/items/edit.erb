@@ -8,10 +8,10 @@
       </div>
     <% end %>
 
-    <form id="edit-item-form" action="/items/<%= @user.id %>" method="post">
+    <form id="edit-item-form" action="/users/<%= @user.id %>/items/<%= @item.id %>" method="POST">
+      <input type="hidden" name="_method" value="PUT">
       <label>Item Name:</label><br>
       <input type='text' name='item[name]' value="<%= @item.name %>"><br><br>
-      <!-- FIX CONDITION!!! For default -->
       <label>Condition:</label><br>
       <select name="item[condition]">
         <option value="Poor" <%= "selected" if @item.condition == "Poor"%>>Poor</option>

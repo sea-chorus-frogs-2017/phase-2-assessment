@@ -20,4 +20,19 @@ $(document).ready(function(){
       $('#new-post-form').before(response.responseText);
     });
   });
+  $('#post-list').on("submit", ".new-post-like-form", function(event){
+    event.preventDefault();
+    var form = $(this);
+    var post = $(this).parent();
+    var formAction= $(this).attr('action');
+    var formMethod = $(this).find('input').attr('value');
+    var request = $.ajax({
+      url: formAction,
+      type: formMethod,
+    });
+    request.done(function(response){
+      var likeCount = post.find('.post-details .post-detail').last();
+      likeCount.html(response);
+    });
+  });
 });

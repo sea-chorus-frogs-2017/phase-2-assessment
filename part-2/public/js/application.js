@@ -1,7 +1,6 @@
 $(document).ready(function(){
   $("form#new-post-form").on("submit", function(event){
     event.preventDefault();
-    // var currentPost = event.this
     var post = $(event.target).serialize();
     $.ajax({
       url: '/posts',
@@ -9,23 +8,33 @@ $(document).ready(function(){
       data: post
     }).done(function(response){
       $("form#new-post-form")[0].reset();
-      // different? can post here
       $("#post-list").prepend(response);
-      debugger
     })
   })
 
-  $("article.post").on("submit", function(event){
+  $("#post-list").on("click", ".input.submit", function(event){
     event.preventDefault();
-    // debugger
-    var currentPost = $(event.currentTarget).children('div.post-details');
-    var path = event.target.action
+    var currentPost = $(this.closest('li')).children().children()[1];
+    var path = event.target.form.action
     $.ajax({
       url: path,
       type: 'PUT'
     }).done(function(response){
-      // currentPost.html(response)
-      console.log(response);
+      $(currentPost).html(response)
     })
   })
+
+  // $("article.post").on("submit", function(event){
+  //   event.preventDefault();
+  //   var currentPost = $(event.currentTarget).children('div.post-details');
+  //   var path = event.target.action
+  //   // debugger
+    // $.ajax({
+    //   url: path,
+    //   type: 'PUT'
+    // }).done(function(response){
+    //   currentPost.html(response)
+    //   console.log(response);
+    // })
+  // })
 });

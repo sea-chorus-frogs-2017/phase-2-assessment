@@ -13,7 +13,7 @@ $(document).ready(function(){
     });
   });
 
-  $('.new-post-like-form').on('submit', function(event){
+  $('#post-list').on('submit','.new-post-like-form', function(event){
     event.preventDefault();
     var that = this;
     var formAction = $(this).attr('action')

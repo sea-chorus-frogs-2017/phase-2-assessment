@@ -43,3 +43,17 @@ nav h1 {
 .errors-list li {
   list-style-type: none;
 }
+
+#profile-link {
+  border-right-style: solid;
+  border-color: black;
+}
+
+#login-link {
+  border-right-style: solid;
+  border-color: black;
+}
+
+.navbar-link {
+  padding: 5px;
+}

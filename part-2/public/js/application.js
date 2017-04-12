@@ -15,14 +15,15 @@ $(document).ready(function() {
 
   $('#post-list').on('click', '.input', function(e) {
     e.preventDefault()
-    var $postUrl = $(this).parent().attr('action')
+    var $form = $(this).parent();
+    var $postUrl = $form.attr('action')
     var id = $postUrl.match(/\d+/)[0]
     $.ajax({
       type: 'put',
       url: '/posts/' + id + '/like'
     }).done(function(response) {
-      var $likes = $($('.post-details').children()[1]);
-      $likes.text(response + ' likes');
+      var $likes = $form.parent().find('.post-detail')[1]
+      $($likes).text(response + ' likes');
 
 
 

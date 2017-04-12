@@ -7,10 +7,10 @@ post '/sessions' do
   if @user
     session[:user_id] = @user.id
   end
-  redirect to "/users/#{@user.id}"
+  redirect to '/'
 end
 
-delete '/sessions' do
+get '/sessions/logout' do
   session.clear
   redirect '/'
 end

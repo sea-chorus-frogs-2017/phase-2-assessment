@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   include BCrypt
 
   has_many :listed_items, foreign_key: :lister_id, class_name: :Item
+  has_many :bids, foreign_key: :bidder_id
+  has_many :bidded_on_items, through: :bids, source: :item
 
   validates :email, presence: true, uniqueness: true
   validates :username, presence: true, uniqueness: true

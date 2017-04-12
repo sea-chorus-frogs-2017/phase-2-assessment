@@ -1,20 +1,21 @@
 $(document).ready(function() {
-  console.log('in javascript code!');
 
-  // $('#new-post-form').submit(function(event) {
-  //   // user is submitting filled-out post form
-  //   event.preventDefault();
-  //   console.log(' user submitted a new post form - listener is working');
+  $('#new-post-form').submit(function(event) {
+    // user is submitting filled-out post form
+    event.preventDefault();
+    console.log(' user submitted a new post form - listener is working');
     // $.ajax({
     //   url: '/posts',
     //   method: 'POST',
     //   data:$(event.target).serialize()
-    // }).done(function(response) {
+    // })
+
+    // .done(function(response) {
     //   $('#horse-container').append(response);
     //   $('#new-horse-form').empty();
     //   $('#add-horse').removeClass('invisible');
     //   });
-  // });
+  });
 
 // $('#add-horse').submit(function(event) {
 //   event.preventDefault();

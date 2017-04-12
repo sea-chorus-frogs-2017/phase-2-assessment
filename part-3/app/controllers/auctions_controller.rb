@@ -1,6 +1,10 @@
 get '/auctions/new' do
-  @auction
-  erb :'auctions/new'
+  if session[:user_id]
+    @auction
+    erb :'auctions/new'
+  else
+    erb :'404'
+  end
 end
 
 post '/auctions' do
@@ -14,7 +18,11 @@ end
 
 get '/auctions/:id/edit' do
   @auction = Auction.find_by_id(params[:id])
-  erb :'auctions/edit'
+  if @auction.auctioner == User.find_by_id(session[:user_id])
+    erb :'auctions/edit'
+  else
+    erb :'404'
+  end
 end
 
 put '/auctions/:id' do
@@ -24,6 +32,11 @@ put '/auctions/:id' do
 end
 
 delete '/auctions' do
-  Auction.destroy(params[:auction][:id])
-  redirect to "/users/#{session[:user_id]}"
+  auction = Auction.find_by_id(params[:auction][:id])
+  if auction.auctioner == User.find_by_id(session[:user_id])
+    Auction.destroy(params[:auction][:id])
+    redirect to "/users/#{session[:user_id]}"
+  else
+    erb :'404'
+  end
 end

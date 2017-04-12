@@ -76,7 +76,7 @@ nav h1 {
   text-decoration: underline;
 }
 
-.faux-link:focus {
+.faux-form:focus {
   box-shadow: none;
 }
 

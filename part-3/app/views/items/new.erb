@@ -1,0 +1,24 @@
+<div class="container">
+  <h1> NEW AUCTION ITEM </h1>
+  <form action = "/items" method = "post">
+    <label for="name">Item Name:</label>
+      <input class="name" type="text" placeholder="name" name="item[name]">
+
+    <label for="condition">Condition:</label>
+      <select name="condition">
+        <option value="empty"></option>
+        <option value="Fair">Fair</option>
+        <option value="Good">Good</option>
+        <option value="Great">Great</option>
+        <option value="Excellent">Excellent</option>
+      </select>
+
+    <label for="name_input">Event Name:</label>
+      <input id="starts_at" type="datetime-local" name="item[starts_at]"/>
+
+    <label for="name_input">Event Name:</label>
+      <input id="ends_at" type="datetime-local" name="item[ends_at]"/>
+
+    <input class="submit-button" type="submit" name="List Item For Auction">
+  </form>
+</div>

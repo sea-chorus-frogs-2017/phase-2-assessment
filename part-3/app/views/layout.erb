@@ -29,15 +29,16 @@
 
         <%= erb :'partials/_logout' %>
     </div>
-    <% else %>
-      <div>
+    <div>
+      <% else %>
         <a href="/login">LOGIN</a>
-      </div>
-      <div>
-        <a href="users/new">REGISTER</a>
-      </div>
-    <% end %>
+    </div>
+    <div>
+      <a href="users/new">REGISTER</a>
+    </div>
+      <% end %>
   </nav>
+  <h1> WEB APPetizer!</h1>
   <%= yield %>
 </body>
 </html>

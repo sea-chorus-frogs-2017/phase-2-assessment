@@ -22,7 +22,11 @@
 <span><h1>DBC Auction!</h1></span>
 <% if @user %>
   <span><a href="/users/<%= @user.id %>"><%= @user.username %></a> ||</span>
-  <span><a href='/sessions' data-method="delete">Logout</a></span>
+  <span><form action="/sessions" method="post">
+    <input type="hidden" name="_method" value="DELETE" />
+    <input type="submit" value="Logout"/>
+  </form></span>
+  <!-- <span><a href='/sessions' data-method="delete">Logout</a></span> -->
 <% else %>
   <span><a href='/sessions'>Login</a> ||</span>
   <span><a href='/users/new'>Register</a></span>

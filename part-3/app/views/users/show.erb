@@ -18,7 +18,13 @@
         <li>Current Bid: $<%= item.bid %></li>
         <li>Listing Author: <%= item.user.username %></li>
       </ul>
-      <a href="/users/<%= @user.id %>/items/<%= item.id %>/edit">Update Item</a>
+      <span><a href="/users/<%= @user.id %>/items/<%= item.id %>/edit">Update Item</a></span>
+      <span>
+        <form action="/users/<%= @user.id %>/items/<%= item.id %>" method="post">
+          <input type="hidden" name="_method" value="DELETE" />
+          <input type="submit" value="Delete Item"/>
+        </form>
+      </span>
     </ol>
   <% end %>
 </div>

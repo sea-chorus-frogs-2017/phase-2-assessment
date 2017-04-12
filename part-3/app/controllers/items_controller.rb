@@ -21,3 +21,9 @@ put '/users/:user_id/items/:id' do
   item.update(params["item"])
   redirect to "/users/#{params[:user_id]}"
 end
+
+delete '/users/:user_id/items/:id' do
+  item = Item.find(params[:id])
+  item.destroy
+  redirect to "/users/#{params[:user_id]}"
+end

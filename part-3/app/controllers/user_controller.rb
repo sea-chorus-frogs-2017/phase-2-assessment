@@ -1,8 +1,9 @@
 get '/users/new' do
+  @user = User.new
   if request.xhr?
     status 200
   else
-    erb :'/users/_new_user_form'
+    erb :'/users/new'
   end
 end
 
@@ -15,10 +16,12 @@ get '/users/login' do
 end
 
 post '/users' do
-  new_user = User.create(params['user'])
-  if request.xhr?
-    status 200
-  else
-    erb :'/index'
+    @user = User.new(params['user'])
+
+    if @user.save
+      erb :'/index'
+
+    else
+      erb :'/users/new'
   end
 end

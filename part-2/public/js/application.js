@@ -3,6 +3,7 @@ $(document).ready(function() {
   $('#sidebar').on('submit', 'form', function(e) {
     e.preventDefault();
     var postInfo = $(event.target).serialize();
+    $(this).find("input[type=text], textarea").val("");
 
     $.ajax({
       url: '/posts',
@@ -10,6 +11,7 @@ $(document).ready(function() {
       data: postInfo,
     }).done(function(response) {
       $('#post-list').prepend('<li>' + response + '</li>');
+
     });
   });
 

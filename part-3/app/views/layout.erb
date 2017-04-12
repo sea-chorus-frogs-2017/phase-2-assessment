@@ -20,7 +20,12 @@
 <body>
   <nav>
     <a href="/">DBC Auction!</a>
-    <a href="/users/new" class="session-link">Register</a>
+    <% if session[:user_id] %>
+      <a href="/sessions/logout" class="session-link">Logout</a>
+    <% else %>
+      <a href="/users/new" class="session-link">Register</a>
+      <a href="/sessions/login" class="session-link">Login</a>
+    <% end %>
   </nav>
   <%= yield %>
 </body>

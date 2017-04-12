@@ -11,14 +11,14 @@ nav a {
   margin: auto;
 }
 
-.registration-form {
+.form {
   padding: 20px;
   border-style: solid;
   max-width: 450px;
   min-width: 300px;
 }
 
-.registration-form div {
+.form div {
   padding: 5px;
   margin: 5px;
 }

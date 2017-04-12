@@ -1,4 +1,4 @@
-<div class="registration-form container">
+<div class="form container">
   <%= erb :"users/_errors", { layout: false, locals: { errors: @user.errors.values.flatten } } %>
   <form action = "/users" method = "post">
     <div>

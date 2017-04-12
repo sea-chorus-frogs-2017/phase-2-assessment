@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
+  # Password validation does not prevent empty string from registering as password
+  validates :password, presence: true, allow_blank: false, :length => {:minimum => 1}
   validates :password_hash, presence: true
 
   def password

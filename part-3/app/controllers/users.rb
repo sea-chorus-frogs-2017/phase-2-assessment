@@ -6,9 +6,13 @@ end
 
 # Creates new user and redirects to homepage with user logged in
 post '/users' do
-  @user = User.create(params[:user])
-  session['user_id'] = @user.id
-  redirect '/'
+  @user = User.new(params[:user])
+  if @user.save
+    session['user_id'] = @user.id
+    redirect '/'
+  else
+    erb :'users/new'
+  end
 end
 #Note: This route contains a session user_id creation...
 #      based on assessment specifications...

@@ -7,3 +7,10 @@
   border: 3px dotted grey;
   padding: 20px;
 }
+
+
+.errors {
+  padding: 2px;
+  color: red;
+  display: table;
+}

@@ -8,7 +8,10 @@
   <% else %>
     <ul>
       <% @user.items.each do |item| %>
-        <li><%= item.name %></li>
+        <li>
+          <%= item.name %>
+          <a href="/items/<%= item.id %>/edit">edit</a>
+        </li>
       <% end %>
     </ul>
   <% end %>

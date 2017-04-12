@@ -31,11 +31,15 @@ end
 put '/users/:user_id/items/:item_id' do
   @user = User.find(params[:user_id])
   @item = Item.find(params[:item_id])
-  @item.attributes = params[:item]
-  if @item.save
-    redirect "/users/#{@user.id}"
+  if session[:user_id] == @item.lister.id
+    @item.attributes = params[:item]
+    if @item.save
+      redirect "/users/#{@user.id}"
+    else
+      erb :'items/edit'
+    end
   else
-    erb :'items/edit'
+    redirect '/'
   end
 end
 

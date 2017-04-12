@@ -9,7 +9,7 @@ end
 post '/users' do
   @user = User.new(params[:user])
   if @user.save
-    redirect '/'
+    redirect '/sessions/new'
   else
     erb :'users/new'
   end

@@ -21,7 +21,7 @@
   <h1>DBC Auction!</h1>
   <div>
     <% if session[:user_id] %>
-      <a id="current-user" href="/users/<%= session[:user_id] %>"><%= @user.username %></a> |
+      <a id="current-user" href="/users/<%= session[:user_id] %>"><%= @user.username %></a>
       <form id='logout' action='/sessions/<%= session[:user_id] %>' method='POST'>
         <input type='hidden' name='_method' value='delete'>
         <input type='submit' value='logout'>

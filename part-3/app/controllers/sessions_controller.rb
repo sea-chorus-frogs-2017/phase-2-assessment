@@ -11,7 +11,7 @@ post '/sessions' do
   if @user
     if @user.authenticate?(params[:password])
       session[:user_id] = @user.id
-      redirect '/'
+      redirect "/users/#{@user.id}"
     else
       @error = "Password is incorrect"
       erb :'sessions/new'
@@ -22,7 +22,9 @@ post '/sessions' do
   end
 end
 
-delete '/sessions/:id' do
-  session.destroy
+delete '/sessions/:user_id' do
+  if session[:user_id] == params[:user_id].to_i
+    session.destroy
+  end
   redirect '/'
 end

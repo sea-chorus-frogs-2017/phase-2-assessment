@@ -7,6 +7,7 @@ var Classroom = function(students = []) {
 
     function nameMatch(searchName) {
       return this.student.name === searchName;
+
     }
 
     // var matches = this.students.filter(function(student) {

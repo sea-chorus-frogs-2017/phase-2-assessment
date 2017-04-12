@@ -11,6 +11,6 @@
 #   end
 # end
 
-# get '/users/new' do
-#   erb :"_registration-form"
-# end
+get '/users/new' do
+  erb :"users/_registration"
+end

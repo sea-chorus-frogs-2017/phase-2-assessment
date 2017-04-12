@@ -1,4 +1,12 @@
 
+<% if errors != false %>
+  <section class="errors">
+    <ul>
+        <li>Email or Password incorrect!</li>
+    </ul>
+  </section>
+<% end %>
+
 <form class="form navbar-form" id="log-in-form" method="post" action="/users/login">
     <input type="text" class="form-control" name="user[email]" placeholder="email...">
     <input type="password" class="form-control" name="user[password]" placeholder="password...">

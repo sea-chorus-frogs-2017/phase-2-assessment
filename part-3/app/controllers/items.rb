@@ -27,6 +27,12 @@ put '/users/:user_id/items/:id' do
   end
 end
 
+delete '/users/:user_id/items/:id' do
+  item = Item.find(params[:id])
+  item.destroy
+  redirect "/users/#{params[:user_id]}"
+end
+
 get '/users/:user_id/items/:id/edit' do
   @user = User.find(params[:user_id])
   @item = Item.find(params[:id])

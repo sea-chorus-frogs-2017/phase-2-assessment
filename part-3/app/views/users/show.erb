@@ -19,6 +19,11 @@
           <li>
             <%= item.name %>
             <a href='/users/<%= @user.id %>/items/<%= item.id %>/edit'>edit</a>
+            <form action='/users/<%= @user.id %>/items/<%= item.id %>' method='post'>
+              <input name='_method' type='hidden' value='delete' />
+              <input type='submit' value='delete this auction'>
+            </form>
+            <br>
           </li>
         <% end %>
       </ol>

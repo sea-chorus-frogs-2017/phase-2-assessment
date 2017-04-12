@@ -23,18 +23,4 @@ $(document).ready(function(){
       $(currentPost).html(response)
     })
   })
-
-  // $("article.post").on("submit", function(event){
-  //   event.preventDefault();
-  //   var currentPost = $(event.currentTarget).children('div.post-details');
-  //   var path = event.target.action
-  //   // debugger
-    // $.ajax({
-    //   url: path,
-    //   type: 'PUT'
-    // }).done(function(response){
-    //   currentPost.html(response)
-    //   console.log(response);
-    // })
-  // })
 });

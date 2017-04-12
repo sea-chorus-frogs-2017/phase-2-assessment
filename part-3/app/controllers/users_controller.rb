@@ -10,3 +10,12 @@ post '/users' do
     erb :'users/new'
   end
 end
+
+get '/users/:id' do
+  if params[:id].to_i == session[:user_id]
+    @user = User.find(params[:id])
+    erb :'users/show'
+  else
+    redirect '/'
+  end
+end

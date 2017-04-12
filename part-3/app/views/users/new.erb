@@ -1,5 +1,5 @@
 <div class="form container">
-  <%= erb :"users/_errors", { layout: false, locals: { errors: @user.errors.values.flatten } } %>
+  <%= erb :"partials/_errors", { layout: false, locals: { errors: @user.errors.values.flatten } } %>
   <form action = "/users" method = "post">
     <div>
       <label>Email:</label>

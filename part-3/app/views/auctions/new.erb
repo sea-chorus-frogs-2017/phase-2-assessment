@@ -2,16 +2,27 @@
   <%= erb :"partials/_errors", { layout: false, locals: { errors: @auction.errors.values.flatten } } %>
   <form action = "/auctions" method = "post">
     <div>
-
+      <label>Item Name:</label>
+      <input type="text" name="auction[name]">
     </div>
     <div>
-
+      <label>Condition:</label>
+      <input type="text" name="auction[condition]">
     </div>
     <div>
-
+      <label>Starts At:</label>
+      <input type="datetime-local" name="auction[starts_at]">
     </div>
     <div>
-
+      <label>Ends At:</label>
+      <input type="datetime-local" name="auction[ends_at]">
+    </div>
+    <div>
+      <label>Description:</label>
+      <textarea name="auction[description]"></textarea>
+    </div>
+    <div>
+    <input type="submit" value="List Item for Auction">
     </div>
   </form>
 </div>

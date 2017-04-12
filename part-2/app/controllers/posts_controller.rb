@@ -1,16 +1,19 @@
+require "json"
+
 get "/posts" do
   @posts = Post.order("created_at DESC")
   erb :'posts/index'
 end
 
 post "/posts" do
-  @post = Post.new(params[:post])
+  @post = Post.create(params[:post])
 
-  if @post.save
-    redirect "posts/#{@post.id}"
+  if request.xhr?
+    erb :'posts/_post', layout: false, locals: {post: @post}
   else
-    erb :"posts/new"
+    redirect "posts/#{@post.id}"
   end
+
 end
 
 get "/posts/new" do

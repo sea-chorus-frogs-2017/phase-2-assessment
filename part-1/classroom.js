@@ -3,9 +3,14 @@ var Classroom = function(students) {
 }
 
 Classroom.prototype.find = function (query) {
-  console.log(query)
-  return this.students.filter( function(student) {
-    console.log(student)
+  return this.students.find( function(student) {
     return student.firstName === query;
   }, query);
 }
+
+Classroom.prototype.honorRollStudents = function() {
+  return this.students.filter( function(student) {
+    return student.averageScore() >= 95;
+  });
+}
+

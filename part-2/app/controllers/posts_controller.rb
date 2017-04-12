@@ -4,10 +4,18 @@ get "/posts" do
 end
 
 post "/posts" do
-  @post = Post.new(params[:post])
-
-  if @post.save
-    redirect "posts/#{@post.id}"
+  # puts "==============================="
+  # # p JSON.parse(params[:post])
+  # puts "==============================="
+  # p params
+  # puts "====================="
+  # p params[:post]
+  # puts "====================="
+  # p params[:post]["body"]
+  post = Post.new(params[:post])
+  # p post
+  if post.save
+    erb :'/posts/_new_post', layout: false, locals: {post: post}
   else
     erb :"posts/new"
   end

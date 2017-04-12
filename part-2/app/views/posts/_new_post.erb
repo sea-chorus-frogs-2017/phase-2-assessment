@@ -1,7 +1,4 @@
-<article class="post">
-  <div class="new-posts">
-  </div>
-  <p>
+<p>
     <%= post.body %>
   </p>
 
@@ -11,4 +8,3 @@
   </div>
 
   <%= erb :"posts/_post_like_form", { layout: false, locals: { post: post } } %>
-</article>

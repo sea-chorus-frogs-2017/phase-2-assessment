@@ -21,7 +21,7 @@ end
 get '/users/:user_id/items/:item_id/edit' do
   @item = Item.find(params[:item_id])
   @user = User.find(params[:user_id])
-  if session[:user_id] == @user.id
+  if session[:user_id] == @item.lister.id
     erb :'items/edit'
   else
     redirect '/'
@@ -36,5 +36,16 @@ put '/users/:user_id/items/:item_id' do
     redirect "/users/#{@user.id}"
   else
     erb :'items/edit'
+  end
+end
+
+delete '/users/:user_id/items/:item_id' do
+  @item = Item.find(params[:item_id])
+  @user = User.find(params[:user_id])
+  if session[:user_id] == @item.lister.id
+    @item.destroy
+    redirect "/users/#{@user.id}"
+  else
+    redirect '/'
   end
 end

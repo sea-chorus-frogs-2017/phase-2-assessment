@@ -9,7 +9,13 @@
 <% else %>
   <ul>
     <% @user.listed_items.each do |item| %>
-      <li><%= item.name %>    <a href=<%= "/users/#{@user.id}/items/#{item.id}/edit" %>>edit</a></li>
+      <li>
+      <%= item.name %><a href=<%= "/users/#{@user.id}/items/#{item.id}/edit" %>>   edit   </a>
+        <form id='delete-item' action=<%="/users/#{@user.id}/items/#{item.id}"%> method='POST'>
+          <input type='hidden' name='_method' value='delete'>
+          <input type='submit' value='delete'>
+        </form>
+      </li>
     <% end %>
   </ul>
 <% end %>

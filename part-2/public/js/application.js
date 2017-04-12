@@ -8,6 +8,7 @@ $( document ).ready(function() {
       data: newPostInfo
     }).done(function(response){
       $('#post-list').prepend(response);
+      $('#new-post-form').trigger("reset");
     })
   })
 });

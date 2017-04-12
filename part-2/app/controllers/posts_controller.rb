@@ -4,16 +4,7 @@ get "/posts" do
 end
 
 post "/posts" do
-  # puts "==============================="
-  # # p JSON.parse(params[:post])
-  # puts "==============================="
-  # p params
-  # puts "====================="
-  # p params[:post]
-  # puts "====================="
-  # p params[:post]["body"]
   post = Post.new(params[:post])
-  # p post
   if post.save
     erb :'/posts/_new_post', layout: false, locals: {post: post}
   else
@@ -34,5 +25,6 @@ end
 put "/posts/:id/like" do
   @post = Post.find(params[:id])
   @post.increment!(:likes_count)
-  redirect "/posts/#{@post.id}"
+  erb :'/posts/_update_post_likes', layout: false, locals: {post: @post}
+  # redirect "/posts/#{@post.id}"
 end

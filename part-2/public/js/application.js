@@ -7,14 +7,22 @@ $(document).ready(function(){
       type: 'POST',
       data: post
     }).done(function(response){
-      console.log(response)
       $("form#new-post-form")[0].reset();
-      $("div.new-posts").prepend(response);
+      $("article.post").prepend(response);
     })
   })
 
-  $("section#comments.content").on("submit", function(event){
+  $("article.post").on("submit", function(event){
     event.preventDefault();
-    console.log(event);
+    // debugger
+    var currentPost = $(event.currentTarget).children('div.post-details');
+    var path = event.target.action
+    $.ajax({
+      url: path,
+      type: 'PUT'
+    }).done(function(response){
+      // currentPost.html(response)
+      console.log(response);
+    })
   })
 });

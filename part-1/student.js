@@ -1,13 +1,7 @@
-var Student = function(options) {
+var Student = function(studentInfo) {
 
-  this.firstName = options.firstName;
-  this.scores = options.scores;
-  var firstName = function(){
-    return this.firstName;
-  };
-  var scores = function(){
-    return this.scores;
-  };
+  this.firstName = studentInfo.firstName;
+  this.scores = studentInfo.scores;
 };
 
 Student.prototype.averageScore = function(){

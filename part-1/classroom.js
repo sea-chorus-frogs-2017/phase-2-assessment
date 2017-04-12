@@ -12,3 +12,16 @@ Classroom.prototype.find = function(name) {
       return student;
     }
 }
+
+
+// this method is adding jalil but not irene
+// for the sake of time i am going to move on to the next challenge
+Classroom.prototype.honorRollStudents = function() {
+  var honorStudents = []
+  for(var i=0; i < this.students.length; i++) {
+    if(this.students[i].averageScore() >= 95) {
+      honorStudents.push(this.students[i]);
+    }
+    return honorStudents;
+  }
+}

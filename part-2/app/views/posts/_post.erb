@@ -3,8 +3,8 @@
     <%= post.body %>
   </p>
 
-  <div class="post-details">
-    <span class="post-detail" data-post-id="<%= post.id%>><%= post_tagline(post) %></span>
+  <div class="post-details" data-post-id="<%= post.id%>>
+    <span class="post-detail" ><%= post_tagline(post) %></span>
     <%= erb :"posts/_post_detail_vote_count", { layout: false, locals: { post: post } } %>
   </div>
 

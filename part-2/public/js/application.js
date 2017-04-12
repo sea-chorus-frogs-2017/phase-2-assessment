@@ -3,12 +3,11 @@ $(document).ready(function() {
   $('#new-post-form').submit(function(event) {
     // user is submitting filled-out post form
     event.preventDefault();
-    console.log(' user submitted a new post form - listener is working');
-    // $.ajax({
-    //   url: '/posts',
-    //   method: 'POST',
-    //   data:$(event.target).serialize()
-    // })
+    $.ajax({
+      url: '/posts',
+      method: 'POST',
+      data:$(event.target).serialize()
+    })
 
     // .done(function(response) {
     //   $('#horse-container').append(response);

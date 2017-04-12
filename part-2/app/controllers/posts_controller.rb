@@ -1,5 +1,7 @@
 get "/posts" do
   @posts = Post.order("created_at DESC")
+  puts 'in get for /posts in controller'
+
   erb :'posts/index'
 end
 

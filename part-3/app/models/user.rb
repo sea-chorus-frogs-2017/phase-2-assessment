@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   validates :email, :username, uniqueness: true
   validates :email, :username, :password_hash, presence: true
+  validate :password_cant_be_blank
 
   def password
     @password ||= Password.new(password_hash)
@@ -18,5 +19,11 @@ class User < ActiveRecord::Base
   def self.authenticate(given_email, given_password)
     user = User.find_by(email: given_email)
     return user if user && (user.password == given_password)
+  end
+
+  def password_cant_be_blank
+    if self.password == nil
+      errors.add(:password, "can't be blank")
+    end
   end
 end

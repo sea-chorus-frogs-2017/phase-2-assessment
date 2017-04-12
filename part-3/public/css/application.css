@@ -22,3 +22,8 @@
   margin-top: 10px;
   width: 100%;
 }
+
+.errors-list li{
+  color: red;
+  text-align: left;
+}

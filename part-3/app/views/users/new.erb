@@ -1,5 +1,6 @@
 <div class="container">
-
-
+  <% if @user %>
+    <%= erb :'users/_errors', locals: {errors: @user.errors.full_messages.flatten}, layout: false%>
+  <% end %>
   <%= erb :'users/_registration_form', locals: {user: @user}, layout: false %>
 </div>

@@ -3,8 +3,8 @@ body {
   margin: auto;
 }
 
-#register {
-  float: right;
+#registration-errors {
+  color: red;
 }
 
 #registration-form {

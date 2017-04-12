@@ -11,7 +11,7 @@ $(document).ready(function() {
     .done(function(response) {
       console.log('in .done, response to follow');
       console.log(response);
-      $('#post-list').append(response);
+      $('#post-list').prepend(response);
     //   $('#new-horse-form').empty();
     //   $('#add-horse').removeClass('invisible');
       });

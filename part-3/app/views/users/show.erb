@@ -1,3 +1,15 @@
 <h1>Welcome, <%= @user.username %></h1>
 
-<a href="/items/new">List item for auction</a>
+<div class="auction-items">
+  <h3>Your Auctions</h3>
+  <a class="btn btn-default create-item" href="/items/new">List item for auction</a>
+  <% if @user.items.empty? %>
+    You have no items listed.
+  <% else %>
+    <ul>
+      <% @user.items.each do |item| %>
+        <li><%= item.name %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

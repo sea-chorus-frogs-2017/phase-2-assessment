@@ -7,6 +7,16 @@
   text-align: center;
 }
 
-li {
+li.errors {
   list-style: none;
+}
+
+.auction-items {
+  border: 1px solid #000000;
+  min-height: 500px;
+}
+
+.create-item {
+  float: right;
+  margin-top: -56px;
 }

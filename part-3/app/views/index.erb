@@ -1,0 +1,23 @@
+<div class="user-config">
+
+  <% if !@user %>
+    <form class="registration" action="/users/new" method="get">
+          <input type="submit" value="register">
+    </form>
+
+    <form action="/session" method="get">
+      <input type="submit" value="login">
+    </form>
+
+  <% end %>
+
+  <% if @user %>
+     <% if session[:id] == @user.id %>
+       <h1>Welcome <a href="/users/<%= @user.id %>"><%= @user.username %> </a></h1>
+       <form action="/logout" method="post">
+         <button type="submit" value="logout">logout</button>
+       </form>
+     <% end %>
+  <% end %>
+
+</div>

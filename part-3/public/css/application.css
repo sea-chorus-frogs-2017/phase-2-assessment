@@ -7,12 +7,12 @@
   text-align: center;
 }
 
-#new-user-form {
+form {
   display: inline-block;
   width: 100%;
 }
 
-#new-user-form label {
+form label {
   float: left;
   margin-bottom: 10px;
   margin-top: 10px;
@@ -23,7 +23,23 @@
   width: 100%;
 }
 
+.form-submit {
+  margin-top: 10px;
+}
+
 .errors-list li{
   color: red;
   text-align: left;
+}
+
+nav a {
+  text-align: right;
+}
+
+nav h1 {
+  text-align: left;
+}
+
+.errors-list li {
+  list-style-type: none;
 }

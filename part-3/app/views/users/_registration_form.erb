@@ -1,9 +1,9 @@
-<form id="new-user-form" action="/users" method="post">
+<form id="new-user-form" class="form" action="/users" method="post">
   <label>Email:</label>
   <input class="form-input" type="email" name="user[email]" value="<%= user.try(:email)%>">
   <label>Username:</label>
   <input class="form-input" type="text" name="user[username]" value="<%= user.try(:username)%>">
   <label>Password:</label>
   <input class="form-input" type="password" name="user[password]">
-  <input type="submit" value="Register User">
+  <input class="form-submit" type="submit" value="Register User">
 </form>

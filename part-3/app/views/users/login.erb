@@ -1,0 +1,6 @@
+<div class="container">
+  <% if @errors %>
+    <%= erb :'users/_errors', locals: {errors: @errors}, layout: false%>
+  <% end %>
+  <%= erb :'users/_login_form', layout: false %>
+</div>

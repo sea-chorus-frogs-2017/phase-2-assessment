@@ -1,0 +1,12 @@
+body {
+  width: 80%;
+  margin: auto;
+}
+
+#register {
+  float: right;
+}
+
+#registration-form {
+  display: block;
+}

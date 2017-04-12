@@ -17,8 +17,7 @@ $(document).ready(function() {
     e.preventDefault();
     var url = $(e.target).attr("action");
     var article = $(e.target).parent();
-    var post = article.children('div')
-    var points = post.children()[1]
+    var points = article.find('span')[1]
     $.ajax({
       type: 'PUT',
       url: url,

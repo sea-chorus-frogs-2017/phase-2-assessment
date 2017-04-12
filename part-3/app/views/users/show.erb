@@ -2,6 +2,14 @@
 
   <h2>Welcome <%= @user.username %>!</h2>
 
+  <% if session['user_id'] %>
+    <% user = User.find(session['user_id']) %>
+    <a href="/users/<%= user.id %>"><%= user.username %></a> | <a href="session/delete">Logout</a>
+  <% else %>
+    <a href='session/new'>Login</a> | <a href='users/new'>Register</a>
+  <% end %>
+  <hr>
+
   <div class='auction'>
     <h4>Your Auctions</h4>
     <a href='/users/<%= @user.id %>/items/new'>+ add an auction</a>

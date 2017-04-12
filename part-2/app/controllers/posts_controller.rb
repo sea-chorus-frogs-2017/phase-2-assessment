@@ -7,9 +7,17 @@ post "/posts" do
   @post = Post.new(params[:post])
 
   if @post.save
-    erb :"posts/_post", layout: false, locals: {post: @post}
+    if request.xhr?
+      erb :"posts/_post", layout: false, locals: {post: @post}
+    else
+      redirect "posts/#{@post.id}"
+    end
   else
-    erb :"posts/new"
+    if request.xhr?
+      erb :"posts/_errors", layout: false, locals: { errors: @post.errors.values.flatten }
+    else
+      erb :"posts/new"
+    end
   end
 end
 

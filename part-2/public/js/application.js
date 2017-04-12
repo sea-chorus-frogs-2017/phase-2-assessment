@@ -7,7 +7,18 @@ $(document).ready(function() {
       method: 'POST',
       data: postInfo,
     }).done(function(response){
-      $("#post-list").prepend("<li>" + response + "</li>");
+      if(response.includes("<ul class='errors-list'>")){
+        $(".errors").hide();
+        $(".sidebar").find("form").prepend(response)
+      } else {
+        $(".errors").hide();
+        $("#post-list").prepend("<li>" + response + "</li>");
+      }
     })
   });
+
+  $("#post-list").on("submit", function(e){
+    e.preventDefault();
+    console.log("WOOOOOOOOOOOOOO");
+  })
 })

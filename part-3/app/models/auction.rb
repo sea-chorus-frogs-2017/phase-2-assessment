@@ -6,4 +6,12 @@ class Auction < ActiveRecord::Base
 
   belongs_to :user
 
+  def update(params)
+    self.name = params[:name]
+    self.condition = params[:condition]
+    self.starts_at = params[:starts_at]
+    self.ends_at = params[:ends_at]
+    self.description = params[:description]
+  end
+
 end

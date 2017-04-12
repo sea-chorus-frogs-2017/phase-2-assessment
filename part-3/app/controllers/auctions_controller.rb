@@ -17,3 +17,13 @@ get '/auctions/:id/edit' do
   @auction = Auction.find(params[:id])
   erb :'auctions/edit'
 end
+
+put '/auctions/:id' do
+  @auction = Auction.find(params[:id])
+  @auction.update(params[:auction])
+  if @auction.save
+    redirect "/users/#{session[:user_id]}"
+  else
+    erb :"auctions/edit"
+  end
+end

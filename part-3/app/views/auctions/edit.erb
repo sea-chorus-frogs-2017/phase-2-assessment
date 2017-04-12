@@ -1,6 +1,7 @@
 <div class="form container">
   <%= erb :"partials/_errors", { layout: false, locals: { errors: @auction.errors.values.flatten } } %>
-  <form action = "/auctions" method = "post">
+  <form action = "/auctions/<%= @auction.id %>" method = "post">
+    <input type="hidden" name="_method" value="put">
     <div>
       <label>Item Name:</label>
       <input type="text" name="auction[name]" value="<%= @auction.name %>">

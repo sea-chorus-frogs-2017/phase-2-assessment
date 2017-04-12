@@ -3,6 +3,7 @@ get '/users/new' do
 end
 
 post '/users' do
-  User.create(params[:user])
+  @user = User.create(params[:user])
+  session['user_id'] = @user.id
   redirect '/'
 end

@@ -15,15 +15,15 @@ $(document).ready(function() {
       });
   });
 
-  $('.post-list').click(function(event) {
-    // user has clicked somewhere in post-list
+  $('.post-list').on('click','.new-post-like-form',function(event) {
+    // user has clicked on like button
     event.preventDefault();
-    console.log('user clicked on post-list');
-  //   $.ajax({
-  //     url: '/posts',
-  //     method: 'POST',
-  //     data:$(event.target).serialize()
-  //   })
+    console.log('user clicked like button ')
+    // $.ajax({
+    //   url: '/posts/3/like',
+    //   method: 'PUT',
+    //   data:$(event.target).serialize()
+    // })
   //   .done(function(response) {
   //     $('#post-list').prepend(response);
   //     $('#new-post-form').trigger('reset');

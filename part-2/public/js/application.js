@@ -15,6 +15,22 @@ $(document).ready(function() {
       });
   });
 
+  $('.post-list').click(function(event) {
+    // user has clicked somewhere in post-list
+    event.preventDefault();
+    console.log('user clicked on post-list');
+  //   $.ajax({
+  //     url: '/posts',
+  //     method: 'POST',
+  //     data:$(event.target).serialize()
+  //   })
+  //   .done(function(response) {
+  //     $('#post-list').prepend(response);
+  //     $('#new-post-form').trigger('reset');
+  //   //   $('#add-horse').removeClass('invisible');
+  //     });
+  });
+
 // $('#add-horse').submit(function(event) {
 //   event.preventDefault();
 //   $.ajax({

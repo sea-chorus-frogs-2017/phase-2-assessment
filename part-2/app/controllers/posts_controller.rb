@@ -26,5 +26,7 @@ end
 put "/posts/:id/like" do
   @post = Post.find(params[:id])
   @post.increment!(:likes_count)
-  redirect "/posts/#{@post.id}"
+  # now, instead, send back only enough info to show
+  # the new vote count on the page
+  # redirect "/posts/#{@post.id}"
 end

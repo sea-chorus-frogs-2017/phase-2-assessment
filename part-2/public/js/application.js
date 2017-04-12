@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $("form#new-post-form").on("submit", function(event){
     event.preventDefault();
+    // var currentPost = event.this
     var post = $(event.target).serialize();
     $.ajax({
       url: '/posts',
@@ -8,7 +9,9 @@ $(document).ready(function(){
       data: post
     }).done(function(response){
       $("form#new-post-form")[0].reset();
-      $("article.post").prepend(response);
+      // different? can post here
+      $("#post-list").prepend(response);
+      debugger
     })
   })
 

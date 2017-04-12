@@ -1,6 +1,6 @@
 <div class='container'>
 
-  <h3>Create an Auction:</h3>
+  <h3>Edit this Auction:</h3>
 
   <% if session['user_id'] %>
     <% user = User.find(session['user_id']) %>
@@ -11,8 +11,9 @@
   <hr>
 
   <form action='/users/<%= @user.id %>/items' method='post'>
+    <input name='_method' type='hidden' value='put' />
     Item Name:<br>
-      <input type='text' name='item[name]' placeholder='Item Name'>
+      <input type='text' name='item[name]' value='<%= @item.name %>'>
       <br><br>
     Condition:<br>
       <select name='item[condition]'>
@@ -24,16 +25,16 @@
       </select>
       <br><br>
     Starts At:<br>
-      <input type='datetime-local' name='item[starts_at]'>
+      <input type='datetime-local' name='item[starts_at]' value='<%= @item.starts_at %>'>
       <br><br>
     Ends At:<br>
-      <input type='datetime-local' name='item[ends_at]'>
+      <input type='datetime-local' name='item[ends_at]' value='<%= @item.ends_at %>'>
       <br><br>
     Description:<br>
-      <textarea rows='4' cols='50' name='item[description]'>Enter your description here...</textarea>
+      <textarea rows='4' cols='50' name='item[description]'><%= @item.description %></textarea>
       <br><br>
 
-    <input type='submit' value='List Item for Auction'>
+    <input type='submit' value='Update Item for Auction'>
   </form>
 
   <ul>

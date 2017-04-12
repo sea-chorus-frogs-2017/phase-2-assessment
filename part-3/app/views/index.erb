@@ -2,6 +2,8 @@
 
   <h1>DBC Auction!</h1>
 
+  <!-- This code shows up multiple times -->
+  <!-- If I had more time...refactor: put in partial(?) & use yield -->
   <% if session['user_id'] %>
     <% user = User.find(session['user_id']) %>
     <a href="/users/<%= user.id %>"><%= user.username %></a> | <a href="session/delete">Logout</a>

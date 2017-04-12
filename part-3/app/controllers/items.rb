@@ -15,3 +15,9 @@ post '/users/:id/items' do
   end
 end
 
+get '/users/:user_id/items/:id/edit' do
+  @user = User.find(params[:user_id])
+  @item = Item.find(params[:id])
+  erb :'items/edit'
+end
+

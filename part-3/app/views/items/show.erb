@@ -1,0 +1,10 @@
+<h2><%= @item.name %></h2>
+<br>
+<h4>Description:</h4>
+<p><%= @item.description %></p>
+<br>
+<h4>Condition:</h4>
+<p><%= @item.condition %></p>
+<br>
+<br>
+<p>Auction ends on <%= @item.auction_end.to_formatted_s(:long) %></p>

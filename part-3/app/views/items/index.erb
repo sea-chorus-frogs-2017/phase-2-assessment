@@ -1,0 +1,10 @@
+<h2>Current Auctions</h2>
+<% if @active_items.length > 0 %>
+  <ul>
+  <% @active_items.each do |item|%>
+    <li><a href=<%= "items/#{item.id}"%>><%= item.name %></a></li>
+  <% end %>
+  </ul>
+<% else %>
+  <p>There are no active items.</p>
+<% end %>

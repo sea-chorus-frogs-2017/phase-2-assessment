@@ -1,10 +1,22 @@
+get '/items' do
+  @user = User.find(session[:user_id]) if session[:user_id]
+  @active_items = Item.where("auction_start <= ? AND auction_end >= ? ", Time.now, Time.now)
+  erb :'items/index'
+end
+
 get '/items/new' do
   if session[:user_id]
-    @user = User.find(session[:user_id]) if session[:user_id]
+    @user = User.find(session[:user_id])
     erb :'/items/new'
   else
     redirect '/'
   end
+end
+
+get '/items/:id' do
+  @user = User.find(session[:user_id]) if session[:user_id]
+  @item = Item.find(params[:id])
+  erb :'items/show'
 end
 
 post '/items' do

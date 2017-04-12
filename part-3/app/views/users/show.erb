@@ -1,7 +1,12 @@
 <h2>Welcome, <%= @user.username %></h2>
 <div class="container">
   <nav>
-    <h3>Your Auctions</h3>
+    <h3 id="user-auction-title">Your Auctions</h3>
     <a href="/auctions/new">+ add an auction</a>
   </nav>
+  <ul class="auction-list">
+    <% @user.auctions.each do |auction|%>
+      <li class="auction-item"><%= auction.name %></li>
+    <% end%>
+  </ul>
 </div>

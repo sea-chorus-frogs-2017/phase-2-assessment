@@ -5,6 +5,8 @@
   margin: 0 auto;
   width: 40%;
   text-align: center;
+  border-style: solid;
+  padding: 10px;
 }
 
 form {
@@ -34,6 +36,14 @@ form label {
 
 nav a {
   text-align: right;
+}
+
+.auction-item {
+  text-align: left;
+}
+
+#user-auction-title {
+  text-align: left;
 }
 
 nav h1 {

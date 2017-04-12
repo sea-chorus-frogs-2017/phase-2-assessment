@@ -1,43 +1,47 @@
 <div class='container'>
+  <% if session['user_id'] == @user.id %>
 
-  <h3>Create an Auction:</h3>
+    <h3>Create an Auction:</h3>
 
-  <% if session['user_id'] %>
-    <% user = User.find(session['user_id']) %>
-    <a href="/users/<%= user.id %>"><%= user.username %></a> | <a href="/session/delete">Logout</a>
+    <% if session['user_id'] %>
+      <% user = User.find(session['user_id']) %>
+      <a href="/users/<%= user.id %>"><%= user.username %></a> | <a href="/session/delete">Logout</a>
+    <% else %>
+      <a href='/session/new'>Login</a> | <a href='/users/new'>Register</a>
+    <% end %>
+    <hr>
+
+    <form action='/users/<%= @user.id %>/items' method='post'>
+      Item Name:<br>
+        <input type='text' name='item[name]' placeholder='Item Name'>
+        <br><br>
+      Condition:<br>
+        <select name='item[condition]'>
+          <option name='item[condition]' value="New">New</option>
+          <option name='item[condition]' value="Like New">Like New</option>
+          <option name='item[condition]' value="Good">Good</option>
+          <option name='item[condition]' value="Fair">Fair</option>
+          <option name='item[condition]' value="Poor">Poor</option>
+        </select>
+        <br><br>
+      Starts At:<br>
+        <input type='datetime-local' name='item[starts_at]'>
+        <br><br>
+      Ends At:<br>
+        <input type='datetime-local' name='item[ends_at]'>
+        <br><br>
+      Description:<br>
+        <textarea rows='4' cols='50' name='item[description]'>Enter your description here...</textarea>
+        <br><br>
+
+      <input type='submit' value='List Item for Auction'>
+    </form>
+
+    <ul>
+      <li class='errors'><%= @incorrect_item %></li>
+    </ul>
+
   <% else %>
-    <a href='/session/new'>Login</a> | <a href='/users/new'>Register</a>
+    <p>You don't have access to this page.</p>
   <% end %>
-  <hr>
-
-  <form action='/users/<%= @user.id %>/items' method='post'>
-    Item Name:<br>
-      <input type='text' name='item[name]' placeholder='Item Name'>
-      <br><br>
-    Condition:<br>
-      <select name='item[condition]'>
-        <option name='item[condition]' value="New">New</option>
-        <option name='item[condition]' value="Like New">Like New</option>
-        <option name='item[condition]' value="Good">Good</option>
-        <option name='item[condition]' value="Fair">Fair</option>
-        <option name='item[condition]' value="Poor">Poor</option>
-      </select>
-      <br><br>
-    Starts At:<br>
-      <input type='datetime-local' name='item[starts_at]'>
-      <br><br>
-    Ends At:<br>
-      <input type='datetime-local' name='item[ends_at]'>
-      <br><br>
-    Description:<br>
-      <textarea rows='4' cols='50' name='item[description]'>Enter your description here...</textarea>
-      <br><br>
-
-    <input type='submit' value='List Item for Auction'>
-  </form>
-
-  <ul>
-    <li class='errors'><%= @incorrect_item %></li>
-  </ul>
-
 </div>

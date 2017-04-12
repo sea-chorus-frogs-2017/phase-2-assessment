@@ -1,4 +1,5 @@
 <div class='container'>
+  <% if session['user_id'] == @user.id %>
 
   <h3>Edit this Auction:</h3>
 
@@ -41,4 +42,7 @@
     <li class='errors'><%= @incorrect_item %></li>
   </ul>
 
+  <% else %>
+    <p>You don't have access to this page.</p>
+  <% end %>
 </div>

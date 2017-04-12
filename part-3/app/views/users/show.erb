@@ -5,6 +5,15 @@
   <div class='auction'>
     <h4>Your Auctions</h4>
     <a href='/users/<%= @user.id %>/items/new'>+ add an auction</a>
+
+    <ol>
+      <% @user.items.each do |item| %>
+        <li>
+          <%= item.name %>
+          <a href='/users/<%= @user.id %>/items/<%= item.id %>/edit'>edit</a>
+        </li>
+      <% end %>
+    </ol>
   </div>
 
 </div>

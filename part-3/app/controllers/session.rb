@@ -5,15 +5,14 @@ end
 
 # Creates session['user_id']
 post '/session' do
-  @user = User.authenticate(params[:user])
-  if @user
+  user = User.authenticate(params[:user])
+  if user
     session['user_id'] = user.id
     redirect '/'
   else
     @incorrect_login = "Incorrect Login/Password"
     erb :'session/new'
   end
-
 end
 
 # Deletes session['user_id'] and retrieves homepage

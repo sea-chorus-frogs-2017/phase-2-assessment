@@ -1,11 +1,4 @@
-get '/users/:id/items/new' do
-  @item = Item.new
-  if request.xhr?
-    status 200
-  else
-    erb :'/item/new'
-  end
-end
+
 
 get '/users/:user_id/items/:item_id/edit' do
   @user = User.find_by(username: params[:user_id])
@@ -22,6 +15,21 @@ put '/users/:user_id/items/:id' do
    @item.update(params[:item])
   p @item
   redirect to ("/users/#{params[:user_id]}")
+end
+
+delete '/users/:user_id/items/:id' do
+  @item = Item.find(params[:id])
+  @item.destroy
+  redirect to ("/users/#{params[:user_id]}")
+end
+
+get '/users/:id/items/new' do
+  @item = Item.new
+  if request.xhr?
+    status 200
+  else
+    erb :'/item/new'
+  end
 end
 
 post '/items' do

@@ -9,3 +9,15 @@ post '/users/:user_id/items' do
   new_item.save!
   redirect to "/users/#{params[:user_id]}"
 end
+
+get '/users/:user_id/items/:id/edit' do
+  @item = Item.find(params[:id])
+  @user = User.find(params[:user_id])
+  erb :'/items/edit'
+end
+
+put '/users/:user_id/items/:id' do
+  item = Item.find(params[:id])
+  item.update(params["item"])
+  redirect to "/users/#{params[:user_id]}"
+end

@@ -1,0 +1,17 @@
+<form action="/users/<%= @user.id %>/items/<%= @item.id %>" method="post">
+  <input type="hidden" name="_method" value="PUT" />
+  <input type="text" name="item[name]" value="<%= @item.name %>"/>
+  <select name="item[condition]">
+    <option value="New">New</option>
+    <option value="Excellent">Excellent</option>
+    <option value="Good">Good</option>
+    <option value="Fair">Fair</option>
+    <option value="Poor">Poor</option>
+    <option value="As-Is">As-Is</option>
+  </select>
+  <input type="textarea" name="item[description]" value="<%= @item.description %>"/>
+  <input type="datetime-local" name="item[start_time]" value="<%= @item.start_time %>"/>
+  <input type="datetime-local" name="item[end_time]" value="<%= @item.end_time %>"/>
+  <input type="number" name="item[bid]" value="<%= @item.bid %>"/>
+  <input type="submit" value="Update Item"/>
+</form>

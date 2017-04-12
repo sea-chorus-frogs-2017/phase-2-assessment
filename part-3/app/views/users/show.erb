@@ -18,6 +18,7 @@
         <li>Current Bid: $<%= item.bid %></li>
         <li>Listing Author: <%= item.user.username %></li>
       </ul>
+      <a href="/users/<%= @user.id %>/items/<%= item.id %>/edit">Update Item</a>
     </ol>
   <% end %>
 </div>

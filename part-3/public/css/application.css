@@ -2,3 +2,8 @@
   width: 800px;
   margin: 0 auto;
 }
+
+.auction {
+  border: 3px dotted grey;
+  padding: 20px;
+}

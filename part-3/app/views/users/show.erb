@@ -2,4 +2,9 @@
 
   <h2>Welcome <%= @user.username %>!</h2>
 
+  <div class='auction'>
+    <h4>Your Auctions</h4>
+    <a href='/users/<%= @user.id %>/items/new'>+ add an auction</a>
+  </div>
+
 </div>

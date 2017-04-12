@@ -1,0 +1,26 @@
+<div class='container'>
+
+  <h3>Create an Auction:</h3>
+
+  <form action='/users/<%= @user.id %>/items' method='post'>
+    Item Name:
+      <input type='text' name='item[name]' placeholder='Item Name'>
+    Condition:
+      <select>
+        <option name='item[condition]' value="New">New</option>
+        <option name='item[condition]' value="Like New">Like New</option>
+        <option name='item[condition]' value="Good">Good</option>
+        <option name='item[condition]' value="Fair">Fair</option>
+        <option name='item[condition]' value="Poor">Poor</option>
+      </select>
+    Starts At:
+      <input type='datetime-local' name='item[starts_at]'>
+    Ends At:
+      <input type='datetime-local' name='item[ends_at]'>
+    Description:
+      <textarea rows='4' cols='50' name='item[description]'>Enter your description here...</textarea>
+
+    <input type='submit' value='List Item for Auction'>
+  </form>
+
+</div>

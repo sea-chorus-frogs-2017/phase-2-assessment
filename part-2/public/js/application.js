@@ -19,11 +19,9 @@ $(document).ready(function() {
     $.ajax({
       url: $(event.target).attr('action'),
       type: 'PUT',
-      // data:
     }).done(function(response){
-      var jsonResponse = JSON.parse(response);
-      console.log(jsonResponse.likes_count);
-      console.log($(event.target).parent())
+
+      $(event.target).parent().parent().find('article.post').html(response);
     })
   })
 });

@@ -30,7 +30,7 @@ put "/posts/:id/like" do
     @post = Post.find(params[:id])
     @post.increment!(:likes_count)
   if request.xhr?
-    @post.to_json
+    erb :'posts/_post', layout: false, locals: {post: @post}
   else
     redirect "/posts/#{@post.id}"
   end

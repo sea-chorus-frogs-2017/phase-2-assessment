@@ -1,0 +1,32 @@
+<% if @item.errors.any? %>
+  <section class="errors">
+    <ul>
+      <% @item.errors.each do |key, value| %>
+        <li><%= value %></li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>
+
+<div class = "new-item-holder">
+  <form  method="post" action="/items">
+  <fieldset>
+    <label for ="name">Item Name:</label>
+    <input id = "name" type="text" class="form-control" name="item[name]" value="<%= @item.try(:name) %>">
+    <br>
+    <label for ="condition">Condition:</label>
+    <input id = "condition" type="text" class="form-control" name="item[condition]" value="<%= @item.try(:condition) %>">
+    <br>
+    <label for ="start">Starts at:</label>
+    <input id = "start" type="datetime-local" class="form-control" name="item[starts]">
+    <br>
+    <label for ="end">Ends at:</label>
+    <input id = "end" type="datetime-local" class="form-control" name="item[ends]">
+    <br>
+    <label for ="description">Description</label>
+    <textarea id = "description" type="text" class="form-control" name="item[description]"> </textarea>
+    <br>
+    <input type="submit" class="btn btn-default" value="create">
+  </fieldset>
+  </form>
+</div>

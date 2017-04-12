@@ -2,8 +2,8 @@
 <% if @user.errors.any? %>
   <section class="errors">
     <ul>
-      <% @user.errors.full_messages.each do |error| %>
-        <li><%= error %></li>
+      <% @user.errors.each do |key, value| %>
+        <li><%= value %></li>
       <% end %>
     </ul>
   </section>

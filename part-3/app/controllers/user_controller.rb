@@ -31,6 +31,7 @@ get '/users/login' do
 end
 
 get '/users/:id' do
+  @user = User.find_by(username: params[:id])
   erb :'users/show'
 end
 

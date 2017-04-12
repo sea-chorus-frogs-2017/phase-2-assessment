@@ -1,0 +1,24 @@
+<div class = "new-item-holder">
+  <form  method="post" action="/users/<%=@user.username%>/items/<%=@item.id%>">
+  <input name="_method" type="hidden" value="put" />
+  <fieldset>
+    <label for ="name">Item Name:</label>
+    <input id = "name" type="text" class="form-control" name="item[name]" value="<%= @item.name %>">
+    <br>
+    <label for ="condition">Condition:</label>
+    <input id = "condition" type="text" class="form-control" name="item[condition]" value="<%= @item.condition %>">
+    <br>
+    <label for ="start">Starts at:</label>
+    <input id = "start" type="datetime" class="form-control" name="item[starts]" value="<%= @item.starts %>" >
+    <br>
+
+    <label for ="end">Ends at:</label>
+    <input id = "end" type="datetime" class="form-control" name="item[ends]" value="<%= @item.ends %>">
+    <br>
+    <label for ="description">Description</label>
+    <textarea id = "description" type="text" class="form-control" name="item[description]" "> <%=@item.description  %></textarea>
+    <br>
+    <input type="submit" class="btn btn-default" value="update">
+  </fieldset>
+  </form>
+</div>

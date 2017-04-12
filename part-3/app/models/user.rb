@@ -1,6 +1,7 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
+  has_many :items
   validates_presence_of :username,{message: "A username is required."}
   validates_presence_of :email,{message: "An email is required."}
   validates_presence_of :password_hash,{message: "A password is required."}

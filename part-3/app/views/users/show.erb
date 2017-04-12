@@ -1,1 +1,15 @@
-<h2>Welcome, <%= session[:username]%></h2>
+<h2>Welcome, <%= @user.username%></h2>
+
+<div class = "my-auctions">
+  <a href = "/users/<%=session[:username]%>/items/new">add an auction</a>
+  <div class = "list-of-auctions">
+    <h3>Your items for Auction</h3>
+    <% @user.items.each do |item| %>
+      <div>
+        <p><%=item.name%></p>
+        <a href = "/users/<%=@user.username%>/items/<%=item.id%>/edit">edit</a>
+        <a href = "#">delete</a>
+      </div>
+    <%end%>
+  </div>
+</div>

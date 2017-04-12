@@ -1,1 +1,16 @@
 <h2>Welcome, <%= @user.username %></h2>
+
+<h3>Your Auctions</h3>
+
+<a href="/items/new">+ add an auction</a>
+
+<% if @user.listed_items.length == 0 %>
+  <p><%= "You have no items listed." %>
+<% else %>
+  <ul>
+    <% @user.listed_items.each do |item| %>
+      <li><%= item.name %>    <a href=<%= "/users/#{@user.id}/items/#{item.id}/edit" %>>edit</a></li>
+    <% end %>
+  </ul>
+<% end %>
+

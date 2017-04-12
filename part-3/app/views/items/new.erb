@@ -1,9 +1,8 @@
 <div class='form'>
   <center>
-  <!-- fix this \/ -->
-    <% if @user && @user.errors.any? %>
-      <div id="registration-errors">
-        <% @user.errors.full_messages.each do |error| %>
+    <% if @item && @item.errors.any? %>
+      <div id="add-item-errors">
+        <% @item.errors.full_messages.each do |error| %>
           <p><%= error %></p>
         <% end %>
       </div>
@@ -14,7 +13,7 @@
       <input type='text' name='item[name]' placeholder="Item Name"><br><br>
       <label>Condition:</label><br>
       <select name="item[condition]">
-        <option value="Poor" selected>Poor</option>
+        <option value="Poor">Poor</option>
         <option value="Fair">Fair</option>
         <option value="Good" selected>Good</option>
         <option value="Great">Great</option>
@@ -24,7 +23,7 @@
       <label>Ends At:</label><br>
       <input type='text' name='item[auction_end]' placeholder="Auction End Time"><br><br>
       <label>Description:</label><br>
-      <textarea rows="5" cols="50" name='item[description]'placeholder="Auction Start Time"></textarea>
+      <textarea rows="5" cols="50" name='item[description]'placeholder="Item Description"></textarea>
       <br><br>
       <input type='submit' value='List Item for Auction'>
     </form>

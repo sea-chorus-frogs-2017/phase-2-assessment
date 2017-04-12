@@ -8,5 +8,26 @@ get '/items/new' do
 end
 
 post '/items' do
+  @user = User.find(session[:user_id])
+  @item = Item.new(params[:item])
+  if @item.save
+    @user.listed_items << @item
+    redirect "/users/#{@user.id}"
+  else
+    erb :'/items/new'
+  end
+end
+
+get '/users/:user_id/items/:item_id/edit' do
+  @item = Item.find(params[:item_id])
+  @user = User.find(params[:user_id])
+  if session[:user_id] == @user.id
+    erb :'items/edit'
+  else
+    redirect '/'
+  end
+end
+
+post 'users/:user_id/items/:item_id/' do
   p params
 end

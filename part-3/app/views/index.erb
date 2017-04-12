@@ -4,13 +4,9 @@
 
   <% if session['user_id'] %>
     <% user = User.find(session['user_id']) %>
-    <a href="users/<%= user.id %>/show"><%= user.username %></a>
-    <form action='/session/delete' method='post'>
-      <input name='_method' type='hidden' value='delete' />
-      <input type='submit' value='Log Out'>
-    </form>
+    <a href="users/<%= user.id %>/show"><%= user.username %></a> | <a href="session/delete">Logout</a>
   <% else %>
-    <a href='users/new'>Register</a>
+    <a href='session/new'>Login</a> | <a href='users/new'>Register</a>
   <% end %>
 
 

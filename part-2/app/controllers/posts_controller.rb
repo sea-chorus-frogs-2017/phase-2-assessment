@@ -7,7 +7,7 @@ post "/posts" do
   @post = Post.new(params[:post])
 
   if @post.save
-    redirect "posts/#{@post.id}"
+    erb :"posts/_post", layout: false, locals: {post: @post}
   else
     erb :"posts/new"
   end

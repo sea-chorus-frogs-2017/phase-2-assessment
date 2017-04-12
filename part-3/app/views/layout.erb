@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -15,9 +15,20 @@
   <script src="/js/jquery.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>DBC Auction!</title>
 </head>
 <body>
+<nav>
+<span><h1>DBC Auction!</h1></span>
+<% if @user %>
+  <span><a href="/users/<%= @user.id %>"><%= @user.username %></a> ||</span>
+  <span><a href='/sessions' data-method="delete">Logout</a></span>
+<% else %>
+  <span><a href='/sessions'>Login</a> ||</span>
+  <span><a href='/users/new'>Register</a></span>
+<% end %>
+<span>
+</nav>
   <%= yield %>
 </body>
 </html>

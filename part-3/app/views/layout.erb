@@ -16,9 +16,28 @@
   <script src="/js/jquery.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Blind Oxen</title>
 </head>
 <body>
+  <div class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Blind Oxen</a>
+      </div>
+      <center>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li><a href="/users/new">Register</a></li>
+          </ul>
+          <% if session[:user_id] %>
+            <%= erb :'/sessions/_logout_form' %>
+          <% else %>
+            <%= erb :'/sessions/_login_form' %>
+          <% end %>
+        </div>
+      </center>
+    </div>
+  </div>
   <%= yield %>
 </body>
 </html>

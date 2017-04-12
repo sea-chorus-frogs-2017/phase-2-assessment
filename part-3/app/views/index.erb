@@ -1,0 +1,10 @@
+<div class="container">
+  <nav>
+    <h2>Current Auctions</h2>
+  </nav>
+  <ul>
+    <% @current_auctions.each do |auction| %>
+      <li><%= auction.name %></li>
+    <% end %>
+  </ul>
+</div>

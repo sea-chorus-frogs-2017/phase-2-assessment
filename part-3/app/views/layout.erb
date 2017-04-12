@@ -19,7 +19,9 @@
 </head>
 <body>
 <nav>
-  <h1 class="title">DBC Auction!</h1>
+  <a href="/">
+    <h1 class="title">DBC Auction!</h1>
+  </a>
   <% if session[:user_id]%>
     <a id="profile-link" class="navbar-link" href="/users/<%= session[:user_id]%>"><%= User.find(session[:user_id]).username %></a>
     <a id="login-link" class="navbar-link" href="/users/logout">logout</a>

@@ -12,12 +12,19 @@ post "/items" do
   end
 end
 
+delete '/items/:id' do
+  @item = Item.find(params[:id])
+  @item.destroy
+  redirect "/users/#{session_user.id}"
+end
+
 put '/items/:id' do
   @item = Item.find(params[:id])
   @item.assign_attributes(params[:item])
   if @item.save
     redirect "/users/#{session_user.id}"
   else
+    status 400
     erb :"/items/update"
   end
 

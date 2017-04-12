@@ -20,3 +20,15 @@ li.errors {
   float: right;
   margin-top: -56px;
 }
+
+.deletion-form {
+  display: inline;
+}
+
+.delete-item {
+  background: none;
+  color: blue;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}

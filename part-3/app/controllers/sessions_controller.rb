@@ -12,6 +12,11 @@ get '/users/login' do
   erb :'users/login'
 end
 
+get '/users/logout' do
+  session.delete(:user_id)
+  redirect to '/'
+end
+
 post '/users/login' do
   user = User.authenticate(params[:user][:email], params[:user][:password])
   if user

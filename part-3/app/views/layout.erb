@@ -21,9 +21,11 @@
 <nav>
   <h1 class="title">DBC Auction!</h1>
   <% if session[:user_id]%>
-    <a class="navbar-link" href="/users/<%= session[:user_id]%>"><%= User.find(session[:user_id]).username %></a>
+    <a id="profile-link" class="navbar-link" href="/users/<%= session[:user_id]%>"><%= User.find(session[:user_id]).username %></a>
+    <a id="login-link" class="navbar-link" href="/users/logout">logout</a>
   <% else %>
-    <a class="navbar-link" href="/users/new">register</a>
+    <a id="login-link" class="navbar-link" href="/users/login">login</a>
+    <a id="register-link" class="navbar-link" href="/users/new">register</a>
   <% end %>
 </nav>
   <%= yield %>

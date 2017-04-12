@@ -4,6 +4,8 @@
   <p class="profile">Email: <%= @user.email %></p>
 </div>
 
+<a href="/users/<%= @user.id %>/items/new">Add New Item</a>
+
 <div class="auction-container">
   <% @user.items.each do |item| %>
     <ol>
@@ -18,10 +20,4 @@
       </ul>
     </ol>
   <% end %>
-
 </div>
-<!-- <form id="update-profile" action="/users/<%= @user.id %>" method="post" name="<%= @user.id %>">
-  <p> Username: </p>
-  <input class="username" type="text" value="<%= @user.username %>" name="user[username]">
-  <input type="submit">
-</form> -->

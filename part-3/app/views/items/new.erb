@@ -1,0 +1,16 @@
+<form action="/users/<%= @user_id %>/items" method="post">
+  <input type="text" name="item[name]" placeholder="Item Name"/>
+  <select name="item[condition]">
+    <option value="New">New</option>
+    <option value="Excellent">Excellent</option>
+    <option value="Good">Good</option>
+    <option value="Fair">Fair</option>
+    <option value="Poor">Poor</option>
+    <option value="As-Is">As-Is</option>
+  </select>
+  <input type="textarea" name="item[description]" placeholder="Description"/>
+  <input type="datetime-local" name="item[start_time]" placeholder="Start Time"/>
+  <input type="datetime-local" name="item[end_time]" placeholder="End Time"/>
+  <input type="number" name="item[bid]" placeholder="Starting Bid"/>
+  <input type="submit" value="List A New Item"/>
+</form>

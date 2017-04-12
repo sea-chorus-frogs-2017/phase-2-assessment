@@ -4,15 +4,20 @@ get "/posts" do
 end
 
 post "/posts" do
-  @post = Post.create(params[:post])
-  if @post.persisted?
+  @post = Post.new(params[:post])
+  if @post.save
     if request.xhr?
       erb :'posts/_post', locals: {post: @post}, layout: false
     else
       redirect "posts/#{@post.id}"
     end
   else
-    erb :"posts/new"
+    if request.xhr?
+      status 400
+      erb :'posts/_errors', locals: {errors: @post.errors.values.flatten}, layout: false
+    else
+      erb :"posts/new"
+    end
   end
 end
 

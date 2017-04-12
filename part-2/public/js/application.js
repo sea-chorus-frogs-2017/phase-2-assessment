@@ -12,7 +12,12 @@ $(document).ready(function(){
     });
     request.done(function(response){
       form.trigger('reset');
+      $('.errors').remove();
       $('#post-list').prepend("<li>" + response + "</li>");
+    });
+    request.fail(function(response){
+      $('.errors').remove();
+      $('#new-post-form').before(response.responseText);
     });
   });
 });

@@ -29,7 +29,15 @@
           <ul class="nav navbar-nav">
             <li><a href="/users/new">Register</a></li>
           </ul>
+          <% if @error %>
+            <div class="navbar-form navbar-right">
+              <%= @error %>
+            </div>
+          <% end %>
           <% if session[:user_id] %>
+            <div class="navbar-form navbar-right">
+              <a class="btn btn-default" href="/users/<%= session_user.id %>"><%= session_user.username %></a>
+            </div>
             <%= erb :'/sessions/_logout_form' %>
           <% else %>
             <%= erb :'/sessions/_login_form' %>

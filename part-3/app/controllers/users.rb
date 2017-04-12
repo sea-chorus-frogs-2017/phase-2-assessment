@@ -10,4 +10,7 @@ post '/users' do
 
 end
 
-get '/users/:id'
+get '/users/:username' do
+  @username = params[:username]
+  erb :'user/show'
+end

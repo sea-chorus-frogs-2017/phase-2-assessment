@@ -27,7 +27,7 @@
       <text> | </text>
       <a class='login-link' href='/login' >Log In</a>
     <% else %>
-      <a class='user-link' href=''><%= session[:user].username %></a>
+      <a class='user-link' href="/users/<%= session[:user].username %>"><%= session[:user].username %></a>
       <text> | </text>
       <a class='logout-link' href='/' >Log Out</a>
     <% end %>

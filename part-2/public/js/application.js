@@ -9,6 +9,7 @@ $(document).ready(function() {
       data: data,
     }).done(function(response){
       $('#post-list').prepend(response)
+      $('#new-post-form')[0].reset();
     });
   });
 

@@ -9,10 +9,8 @@ $(document).ready(function() {
       data:$(event.target).serialize()
     })
     .done(function(response) {
-      console.log('in .done, response to follow');
-      console.log(response);
       $('#post-list').prepend(response);
-    //   $('#new-horse-form').empty();
+      $('#new-post-form').trigger('reset');
     //   $('#add-horse').removeClass('invisible');
       });
   });

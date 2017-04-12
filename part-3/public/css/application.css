@@ -29,3 +29,23 @@ nav a {
   float: right;
   margin-right:10px;
 }
+
+.delete-form {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  display: inline;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  outline-offset: 0;
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}

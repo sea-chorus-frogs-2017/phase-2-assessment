@@ -27,3 +27,7 @@ put '/auctions/:id' do
     erb :"auctions/edit"
   end
 end
+
+delete '/auctions/:id' do
+  "You did it! Now do it better!"
+end

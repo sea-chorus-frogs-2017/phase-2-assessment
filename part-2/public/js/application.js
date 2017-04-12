@@ -11,24 +11,24 @@ $(document).ready(function() {
     .done(function(response) {
       $('#post-list').prepend(response);
       $('#new-post-form').trigger('reset');
-    //   $('#add-horse').removeClass('invisible');
       });
   });
 
   $('.post-list').on('click','.new-post-like-form',function(event) {
     // user has clicked on like button
     event.preventDefault();
-    console.log('user clicked like button ')
-    // $.ajax({
-    //   url: '/posts/3/like',
-    //   method: 'PUT',
-    //   data:$(event.target).serialize()
-    // })
-  //   .done(function(response) {
+    postId = 3;
+    console.log('user clicked like button ');
+    $.ajax({
+      url: '/posts/' + postId + '/like',
+      method: 'PUT'
+    })
+    .done(function(response) {
+      console.log(response);
   //     $('#post-list').prepend(response);
   //     $('#new-post-form').trigger('reset');
   //   //   $('#add-horse').removeClass('invisible');
-  //     });
+      });
   });
 
 // $('#add-horse').submit(function(event) {

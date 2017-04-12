@@ -28,5 +28,6 @@ put "/posts/:id/like" do
   @post.increment!(:likes_count)
   # now, instead, send back only enough info to show
   # the new vote count on the page
+  erb :"/posts/_post_detail_vote_count"
   # redirect "/posts/#{@post.id}"
 end

@@ -2,7 +2,6 @@ enable :sessions
 
 helpers do
   def session_user
-    return nil unless session[:user_id]
     User.find_by(id: session[:user_id])
   end
 

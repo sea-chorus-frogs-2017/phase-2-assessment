@@ -3,8 +3,9 @@ get '/users/new' do
 end
 
 get "/users/:id" do
-  user = User.find_by(id: params[:id])
-
+  @user = User.find_by(id: params[:id])
+  redirect "/" unless @user && session_user && @user.id == session_user.id
+  erb :"/users/show"
 end
 
 post '/users' do

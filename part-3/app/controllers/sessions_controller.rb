@@ -1,5 +1,9 @@
 get '/sessions/new' do
-  erb :'sessions/new'
+  if session[:user_id]
+    redirect "users/#{session[:user_id]}"
+  else
+    erb :'sessions/new'
+  end
 end
 
 post '/sessions' do

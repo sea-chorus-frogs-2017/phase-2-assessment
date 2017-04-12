@@ -6,11 +6,11 @@ var Student = function(student) {
 
 
 
-  Student.prototype.averageScore = function() {
-    var scoreSum = this.scores.reduce((previous, current) => current += previous);
-    var avg = scoreSum / this.scores.length;
-    return Math.floor(avg);
-  }
+Student.prototype.averageScore = function() {
+  var scoreSum = this.scores.reduce((previous, current) => current += previous);
+  var avg = scoreSum / this.scores.length;
+  return Math.floor(avg);
+}
 
 Student.prototype.letterGrade = function() {
   avgScore = this.averageScore();

@@ -6,6 +6,20 @@ var Classroom = function(incomingStudents) {
   }
 }
 
+Classroom.prototype.find = function(firstNameToFind) {
+  var studentsThisName = function(el) {
+    return (el.firstName === firstNameToFind);
+  }
+  return this.students.filter(studentsThisName)[0];
+}
+
+// garden.flowersByName = function(nameToFind) {
+//   var flowersThisName = function(el) {
+//     return (el.name === nameToFind);
+//   }
+//   return this.flowers.filter(flowersThisName);
+// }
+
 // var garden = {}
 
 // garden.name = 'Kula Botanical Garden';

@@ -1,0 +1,6 @@
+<div class="container">
+  <% if @auction %>
+    <%= erb :'_errors', locals: {errors: @auction.errors.full_messages.flatten}, layout: false %>
+  <% end %>
+  <%= erb :'auctions/_edit_auction_form', locals: {auction: @auction}, layout: false %>
+</div>

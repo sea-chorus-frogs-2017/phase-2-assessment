@@ -8,7 +8,8 @@ $(document).ready(function() {
       url: '/posts',
       data: data
     }).done(function(response) {
-
+      $('#post-list').append(response)
+      $form.reset()
     })
   })
 

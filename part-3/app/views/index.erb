@@ -5,9 +5,15 @@
   <% if session['user_id'] %>
     <% user = User.find(session['user_id']) %>
     <a href="users/<%= user.id %>/show"><%= user.username %></a>
+    <form action='/session/delete' method='post'>
+      <input name='_method' type='hidden' value='delete' />
+      <input type='submit' value='Log Out'>
+    </form>
   <% else %>
     <a href='users/new'>Register</a>
   <% end %>
+
+
 
 <!--   <form action='/login' method='post'>
     Email: <input type='text' name='email'>

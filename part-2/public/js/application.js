@@ -8,12 +8,13 @@ $(document).ready(function() {
       method: 'POST',
       data:$(event.target).serialize()
     })
-
-    // .done(function(response) {
+    .done(function(response) {
+      console.log('in .done, response to follow');
+      console.log(response);
     //   $('#horse-container').append(response);
     //   $('#new-horse-form').empty();
     //   $('#add-horse').removeClass('invisible');
-    //   });
+      });
   });
 
 // $('#add-horse').submit(function(event) {

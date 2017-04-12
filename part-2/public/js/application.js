@@ -23,8 +23,10 @@ $(document).ready(function() {
     var route = $(this).attr('action')
     var updateLikes = $.ajax({
       url: route,
-      type: 'PUT',
-      data: review
+      type: 'PUT'
     });
-  })
+    updateLikes.done(function(r) {
+      targetLikes.html(r.new_likes);
+    });
+  });
 });

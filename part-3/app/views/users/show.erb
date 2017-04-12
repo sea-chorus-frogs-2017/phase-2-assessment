@@ -2,7 +2,7 @@
   <h1>Welcome, <%= "#{@user.username}" %></h1>
 
 <div id="auction-items">
-  <a href ="/items/new"> + New Auction </a>
+  <a href ="/users/<%= @user.id %>/items/new"> + New Auction </a>
   <h2> Your Auctions </h2>
   <ul>
     <li></li>
@@ -16,8 +16,3 @@
 
 </div>
 
-
-<!-- Use this page to list a user's items
-add a link for listing a new item
-  this link takes the user to a form
- -->

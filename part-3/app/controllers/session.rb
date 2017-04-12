@@ -1,20 +1,25 @@
+# Retrieves login form page
 get '/session/new' do
   erb :'session/new'
 end
 
+# Creates session['user_id']
 post '/session' do
   user = User.authenticate(params[:user])
   if user
     session['user_id'] = user.id
     redirect '/'
   else
-    redirect '/' #This should tell user login was wrong instead of just redirecting
+    redirect '/' #WIP: ERROR GOES HERE
   end
 
 end
 
-# Challenge has logout as a link, otherwise I would use a form and method delete
+# Deletes session['user_id'] and retrieves homepage
 get '/session/delete' do
   session.clear
   redirect '/'
 end
+# Note: Assessment shows logout as a link...
+#       otherwise, I would make a form...
+#       and use the delete method.

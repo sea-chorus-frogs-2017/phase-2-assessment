@@ -24,11 +24,8 @@ $(document).ready(function() {
     }).done(function(response) {
       var $likes = $form.parent().find('.post-detail')[1]
       $($likes).text(response + ' likes');
-
-
-
     })
-
   })
-
 })
+
+

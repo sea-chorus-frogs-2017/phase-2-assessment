@@ -1,0 +1,24 @@
+<form id="new-auction-form" class="form" action="/auctions" method="post">
+  <label>Item Name:</label>
+  <input class="form-input" type="text" name="auction[name]" value="<%= auction.try(:name)%>">
+
+  <label>Condition:</label>
+  <select class="form-input" name="auction[condition]">
+    <option value="poor">Poor</option>
+    <option value="average">Average</option>
+    <option value="good">Good</option>
+    <option value="great">Great</option>
+  </select>
+
+  <label>Starts At:</label>
+  <input class="form-input" type="datetime-local" name="auction[starts_at]" value="<%= auction.try(:starts_at)%>">
+
+  <label>Ends At:</label>
+  <input class="form-input" type="datetime-local" name="auction[ends_at]" value="<%= auction.try(:ends_at)%>">
+
+  <label>Description:</label>
+  <textarea class="form-input" name="auction[description]" value="<%= auction.try(:description)%>"></textarea>
+
+  <input type="hidden" name="auction[auctioner_id]" value="<%= session[:user_id] %>">
+  <input class="form-submit" type="submit" value="List Item for Auction">
+</form>

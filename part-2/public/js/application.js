@@ -14,6 +14,19 @@ $(document).ready(function() {
     });
   });
 
+  $('.post').on('submit', 'form', function(e) {
+    e.preventDefault();
+    var article = ($(event.target).parent());
+    var url = $(event.target).attr('action');
+
+    $.ajax({
+      url: url,
+      method: 'PUT',
+    }).done(function(response) {
+      $($(article).find('span').last()).html(response + " likes");
+    });
+  });
+
 });
 
 

@@ -9,3 +9,13 @@ Classroom.prototype.find = function(studentName) {
     }
   }
 }
+
+Classroom.prototype.honorRollStudents = function() {
+  var honorRoll = [];
+  for (var i = 0; i < this.students.length; i++) {
+    if (this.students[i].averageScore() >= 95) {
+      honorRoll.push(this.students[i]);
+    }
+  }
+  return honorRoll;
+}

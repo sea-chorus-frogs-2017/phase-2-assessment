@@ -25,6 +25,15 @@ get '/auctions/:id/edit' do
   end
 end
 
+get '/auctions/:id' do
+  @auction = Auction.find_by_id(params[:id])
+  if @auction
+    erb :'auctions/show'
+  else
+    erb :'404'
+  end
+end
+
 put '/auctions/:id' do
   auction = Auction.find_by_id(params[:id])
   auction.update(params[:auction])

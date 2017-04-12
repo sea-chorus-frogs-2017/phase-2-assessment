@@ -4,7 +4,9 @@
   </nav>
   <ul>
     <% @current_auctions.each do |auction| %>
-      <li><%= auction.name %></li>
+      <a href="/auctions/<%= auction.id %>">
+        <li class="auction-item"><%= auction.name %></li>
+      </a>
     <% end %>
   </ul>
 </div>

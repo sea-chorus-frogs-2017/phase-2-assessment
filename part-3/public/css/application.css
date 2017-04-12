@@ -83,3 +83,12 @@ nav h1 {
 .faux-form {
   display: inline;
 }
+
+#auction-item-name {
+  text-align: center;
+}
+.auction-property{
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}

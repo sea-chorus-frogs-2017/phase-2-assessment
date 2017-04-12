@@ -1,15 +1,13 @@
 get "/posts" do
   @posts = Post.order("created_at DESC")
-  puts 'in get for /posts in controller'
-
   erb :'posts/index'
 end
 
 post "/posts" do
   @post = Post.new(params[:post])
-
   if @post.save
-    redirect "posts/#{@post.id}"
+    erb :"posts/_post", layout: false, locals: {post: @post};
+    # redirect "posts/#{@post.id}"
   else
     erb :"posts/new"
   end

@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :lister, class_name: :User
 
   validates :name, presence: true
   validates :condition, presence: true

@@ -1,6 +1,14 @@
 <div class="center register container">
   <h2>Update Item</h2>
 
+  <% if @item && @item.errors.any? %>
+      <ul>
+        <% @item.errors.full_messages.each do |error| %>
+          <li class="errors"><%= error %></li>
+        <% end %>
+      </ul>
+  <% end %>
+
   <form action="/items/<%= @item.id %>" method="POST">
     <div class="form-group">
       <input class="form-control" type="hidden" name="_method" value="put"

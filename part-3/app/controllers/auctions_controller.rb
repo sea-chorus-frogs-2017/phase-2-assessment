@@ -4,5 +4,11 @@ get '/auctions/new' do
 end
 
 post '/auctions' do
-  p params
+  params[:auction][:user_id] = session[:user_id]
+  @auction = Auction.new(params[:auction])
+  if @auction.save
+    redirect "/users/#{session[:user_id]}"
+  else
+    erb :"auctions/new"
+  end
 end

@@ -4,8 +4,8 @@
   </p>
 
   <div class="post-details">
-    <span class="post-detail"><%= post_tagline(post) %></span>
-    <span class="post-detail"><%= post_likes_count(post) %></span>
+    <span class="post-detail" data-post-id="<%= post.id%>><%= post_tagline(post) %></span>
+    <%= erb :"posts/_post_detail_vote_count", { layout: false, locals: { post: post } } %>
   </div>
 
   <%= erb :"posts/_post_like_form", { layout: false, locals: { post: post } } %>

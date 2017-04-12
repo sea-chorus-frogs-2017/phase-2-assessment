@@ -9,12 +9,11 @@ $(document).ready(function() {
       method: 'POST',
       data: postInfo,
     }).done(function(response) {
-      console.log(response);
       $('#post-list').prepend('<li>' + response + '</li>');
     });
   });
 
-  $('.post').on('submit', 'form', function(e) {
+  $('#comments').on('submit', 'form', function(e) {
     e.preventDefault();
     var article = ($(event.target).parent());
     var url = $(event.target).attr('action');

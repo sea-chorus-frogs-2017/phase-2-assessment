@@ -3,7 +3,7 @@ var Classroom = function(students) {
   this.find = function(searchName) {
     var searchIndex
     var numStudents = this.students.length;
-    for (i = 0; i < numStudents; i++) {
+    for (var i = 0; i < numStudents; i++) {
       if (students[i].firstName == searchName) {
         searchIndex = i;
       }

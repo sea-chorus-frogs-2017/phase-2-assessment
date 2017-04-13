@@ -15,11 +15,13 @@ end
 
 get '/users/:id' do
   if session[:user_id]
+    @user_items = []
     @user = User.find(params[:id])
-    if @user_items = Item.find_by(user_id: params[:id])
-      @items
+    if item = Item.find_by(user_id: params[:id])
+    p item
+     p @user_items.push(item)
     else
-      @items = nil
+      @user_items = nil
     end
     erb :'users/show'
   else

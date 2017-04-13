@@ -28,6 +28,7 @@ end
 get '/auctions/:id' do
   @auction = Auction.find_by_id(params[:id])
   if @auction
+    @bid
     erb :'auctions/show'
   else
     erb :'404'

@@ -1,9 +1,27 @@
-<h2 id="auction-item-name"><%= @auction.name %></h2>
+
 <div class="container">
+  <h2 id="auction-item-name"><%= @auction.name %></h2>
   <label class="auction-property">Description:</label>
   <p><%= @auction.description %></p>
   <label class="auction-property">Condition:</label>
   <p><%= @auction.condition.capitalize %></p>
   <label class="auction-property">Auction Ends:</label>
   <p><%= @auction.ends_at %></p>
+</div>
+
+
+<div class="container">
+  <h2 id="bidding-title">Bidding</h2>
+  <label class="bidding-property">Number of Bidders:</label>
+  <p><%= @auction.bids.count %></p>
+  <% if @auction.bids.any? {|bid| bid.bidder_id == session[:user_id]}%>
+    <p>You have already bid on this item.</p>
+    <p>Thanks for ur monies.</p>
+  <% else %>
+    <label>Place a bid for this item:</label>
+    <% if @bid %>
+      <%= erb :'_errors', locals: {errors: @bid.errors.full_messages.flatten}, layout: false%>
+    <% end %>
+    <%= erb :'bids/_form', locals: {bid: @bid, auction: @auction}, layout: false %>
+  <% end %>
 </div>

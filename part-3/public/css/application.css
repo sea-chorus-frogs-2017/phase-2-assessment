@@ -41,3 +41,8 @@ li.errors {
 .item-detail {
   margin-bottom: 20px;
 }
+
+.bid-info {
+  display: inline-block;
+  float: right;
+}

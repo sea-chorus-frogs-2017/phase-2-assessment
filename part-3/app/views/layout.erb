@@ -25,7 +25,7 @@
         <li>
         <a href="/users/:id"><strong><%= User.find_by_id(session[:user_id]).username %></strong></a>
         </li>
-        <form action="/users/logout" method='post'>
+        <form action="/sessions/users/logout" method='post'>
           <input type="submit" value="Log out" />
         </form>
       <% else %>

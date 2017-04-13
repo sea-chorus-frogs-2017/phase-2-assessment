@@ -1,0 +1,14 @@
+<div class='container'>
+
+  <h2>Current Auctions:</h2>
+  <!-- Time logic to restrict auctions is not yet implemented -->
+
+  <ol>
+    <% @items.each do |item| %>
+      <li>
+        <a href='/items/<%= item.id %>'><%= item.name %></a>
+      </li>
+    <% end %>
+  </ol>
+
+</div>

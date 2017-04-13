@@ -1,3 +1,8 @@
+get '/items' do
+  @items = Item.all
+  erb :'items/index'
+end
+
 get '/users/:id/items/new' do
   @user = User.find(params[:id])
   erb :'items/new'

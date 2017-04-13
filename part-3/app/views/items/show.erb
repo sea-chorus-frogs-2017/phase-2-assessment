@@ -14,7 +14,7 @@
   <section class="bid-info">
     <h3>Bidding</h3>
     Number of bidders: <%= @item.bids.length %><br>
-    Place a bid for this item:<br>
+    Place a bid for this item: <br>
 
     <form action="/bids/new" method="post">
       <input type="hidden" name="bid[user_id]" value=<%= session_user_id %>>

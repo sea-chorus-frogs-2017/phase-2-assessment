@@ -11,7 +11,7 @@ end
 post '/users' do
   @user = User.new(params[:user])
   if @user.save
-    session_login(@user)
+    session_login(@user) unless session_user
     redirect '/'
   else
     erb :"/users/new"

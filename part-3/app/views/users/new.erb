@@ -1,27 +1,14 @@
-
+<div class = "errors"
 <% if @user.errors.any? %>
   <section class="errors">
     <ul>
-      <% @user.errors.each do |key, value| %>
-        <li><%= value %></li>
+      <% @user.errors.full_messages.each do |error| %>
+        <%= error %>
+        <br>
       <% end %>
     </ul>
   </section>
 <% end %>
-
-<div class = "new-user-holder">
-  <form id="new-user-form" method="post" action="/users">
-  <fieldset>
-    <label for ="username">Username</label>
-    <input id = "username" type="text" class="form-control" name="user[username]" value="<%= @user.try(:username) %>">
-    <br>
-    <label for ="email">Email</label>
-    <input id = "email" type="email" class="form-control" name="user[email]" value="<%= @user.try(:email) %>">
-    <br>
-    <label for ="password">Password</label>
-    <input id = "password" type="password" class="form-control" name="user[password]">
-    <br>
-    <input type="submit" class="btn btn-default" value="create">
-  </fieldset>
-  </form>
 </div>
+
+<%= erb :'users/_new_user_form'%>

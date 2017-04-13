@@ -1,7 +1,11 @@
-<h2>Welcome, <%= @user.username%></h2>
+
+
 
 <div class = "my-auctions">
+<h2>Welcome, <%= @user.username%></h2>
+<nav class = "navbar">
   <a href = "/users/<%=session[:username]%>/items/new">add an auction</a>
+  </nav>
   <div class = "list-of-auctions">
     <h3>Your items for Auction</h3>
     <% @user.items.each do |item| %>

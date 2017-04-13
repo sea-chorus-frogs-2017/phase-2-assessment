@@ -1,0 +1,7 @@
+<h1>Current Auctions</h1>
+
+<ul>
+  <% Item.all.each do |item| %>
+    <a href="/items"><li><%= item.name %></li></a>
+  <% end %>
+</ul>

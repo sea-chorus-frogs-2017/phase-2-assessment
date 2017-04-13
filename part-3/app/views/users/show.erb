@@ -1,24 +1,18 @@
 <div class="container">
   <h1>Welcome, <%= "#{@user.username}" %></h1>
 
-<div id="auction-items">
-  <a href ="/users/<%= @user.id %>/items/new"> + New Auction </a>
-  <h2> Your Auctions </h2>
-  <ul>
-    <% if @user_items != nil %>
-      <% @user_items.each do |item| %>
-      <li><%= item.name %></li>
+  <div id="auction-items">
+    <a href ="/users/<%= @user.id %>/items/new"> + New Auction </a>
+    <h2> Your Auctions </h2>
+    <ul>
+      <% if @user_items != nil %>
+        <% @user_items.each do |item| %>
+        <li><%= item.name %></li>
+        <% end %>
+      <% else %>
+        <p> You have no auctions
       <% end %>
-    <% else %>
-      <p> You have no auctions
-    <% end %>
-  </ul>
-</div>
-
-
-
-
-
-
+    </ul>
+  </div>
 </div>
 

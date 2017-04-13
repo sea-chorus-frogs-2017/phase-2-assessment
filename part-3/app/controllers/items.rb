@@ -15,7 +15,7 @@ end
 
 get '/items/:id' do
   @item = Item.find_by(id: params[:id])
-  @users_bid = session_user.has_already_bid?(@item)
+  @users_bid = session_user.has_already_bid?(@item) if session_user
   redirect "/" unless @item
   erb :"/items/show"
 end

@@ -2,3 +2,13 @@
   <h3>Welcome, <%= @username %>!</h3>
 </div>
 <a class='new-auction-link' href='../auctions/new'>Create Auction</a>
+<br>
+<div class='auction-list-div'>
+  <ul class='auction-list'>
+    <% @auctions.each do |auction| %>
+      <li>
+        <%= auction.item %> - <%= auction.item_condition %> - <%= auction.auction_end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

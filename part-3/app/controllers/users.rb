@@ -12,6 +12,7 @@ end
 
 get '/users/:username' do
   @username = params[:username]
+  # make database do all work instead of .all
   @auctions = Auction.all
   p Auction.all
   erb :'users/show'

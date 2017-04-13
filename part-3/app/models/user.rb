@@ -1,4 +1,5 @@
 require 'bcrypt'
+enable :sessions
 
 class User < ActiveRecord::Base
   include BCrypt
@@ -19,5 +20,11 @@ class User < ActiveRecord::Base
 
   def authenticate(input_password)
     self.password == input_password
+  end
+
+  def has_already_bid?(item)
+    bids = Bid.where("bids.user_id = ?", self.id)
+    return nil if bids.empty?
+    bids
   end
 end

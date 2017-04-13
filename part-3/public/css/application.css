@@ -43,6 +43,7 @@ li.errors {
 }
 
 .bid-info {
+  margin-right: 40px;
   display: inline-block;
   float: right;
 }

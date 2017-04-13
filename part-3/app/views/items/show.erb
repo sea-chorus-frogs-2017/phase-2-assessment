@@ -11,20 +11,29 @@
   <section class="item-detail">
     <%= @item.end_time.strftime("Auction Ends on %B %d, %Y\n at %l:%M:%S %P.") %>
   </section>
+
   <section class="bid-info">
     <h3>Bidding</h3>
     Number of bidders: <%= @item.bids.length %><br>
-    Place a bid for this item: <br>
-    <% if @bid && @bid.errors.any? %>
-      <% @bid.errors.full_messages.each do |error| %>
-        <%= error %>
+    <% if @users_bid %>
+      You have already bid on this item.<br>
+      You bid $<%= @users_bid[0].price %> on <%= @users_bid[0].created_at.strftime("%B %d, %Y") %><br>
+      Thank you for bidding!
+    <% else %>
+      Place a bid for this item: <br>
+      <% if @bid && @bid.errors.any? %>
+        <ul>
+          <% @bid.errors.full_messages.each do |error| %>
+            <li class="errors"><%= error %></li>
+          <% end %>
+        </ul>
       <% end %>
+      <form action="/bids/new" method="post">
+        <input type="hidden" name="bid[user_id]" value=<%= session_user_id %>>
+        <input type="hidden" name="bid[item_id]" value=<%= @item.id %>>
+        <input type="text" name="bid[price]">
+        <input type="submit">
+      </form>
     <% end %>
-    <form action="/bids/new" method="post">
-      <input type="hidden" name="bid[user_id]" value=<%= session_user_id %>>
-      <input type="hidden" name="bid[item_id]" value=<%= @item.id %>>
-      <input type="text" name="bid[price]">
-      <input type="submit">
-    </form>
   </section>
 </div>

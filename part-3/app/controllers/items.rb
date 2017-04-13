@@ -15,8 +15,9 @@ end
 
 get '/items/:id' do
   @item = Item.find_by(id: params[:id])
+  @users_bid = session_user.has_already_bid?(@item)
   redirect "/" unless @item
-  erb :'/items/show'
+  erb :"/items/show"
 end
 
 delete '/items/:id' do

@@ -17,7 +17,7 @@
   <% if @auction.bids.any? {|bid| bid.bidder_id == session[:user_id]}%>
     <p>You have already bid on this item.</p>
     <p>Thanks for ur monies.</p>
-  <% else %>
+  <% elsif session[:user_id] %>
     <label>Place a bid for this item:</label>
     <% if @bid %>
       <%= erb :'_errors', locals: {errors: @bid.errors.full_messages.flatten}, layout: false%>

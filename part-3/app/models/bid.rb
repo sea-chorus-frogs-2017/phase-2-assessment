@@ -6,8 +6,8 @@ class Bid < ActiveRecord::Base
   validate :bid_cant_be_less_than_1
 
   def bid_cant_be_less_than_1
-    if self.amount < 1.to_s
-      errors.add(:amount, "can't be less than $1")
+    if self.amount <= 0.to_s
+      errors.add(:amount, "must be greater than $0, you cheapo.")
     end
   end
 end

@@ -3,6 +3,7 @@ class CreateBids < ActiveRecord::Migration
     create_table :bids do |t|
       t.integer :user_id, null: false
       t.integer :item_id, null: false
+      t.integer :price, null: false
 
       t.timestamps null: false
     end

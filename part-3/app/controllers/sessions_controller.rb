@@ -3,23 +3,23 @@
 #   redirect '/'
 # end
 
-# post '/sessions' do
-#   email = params[:user][:email]
-#   user = User.find_by(email: email)
-#   if user
-#     if user.authenticate(email, params[:user][:password])
-#       session[:user_id] = user.id
-#       redirect '/'
-#     else
-#       @error = "Invalid password."
-#       erb :'/index'
-#     end
-#   else
-#     @error = "Invalid email."
-#     erb :'/index'
-#   end
-# end
+post '/sessions' do
+  email = params[:user][:email]
+  @user = User.find_by(email: email)
+  if @user
+    if @user.authenticate(email, params[:user][:password])
+      session[:user_id] = user.id
+      redirect '/'
+    else
+      @error = "Invalid password"
+      erb :'users/_login-form'
+    end
+  else
+    @error = "Invalid email"
+    erb :'users/_login-form'
+  end
+end
 
-# get '/session-viewer' do
-#   session.inspect
-# end
+get '/session-viewer' do
+  session.inspect
+end

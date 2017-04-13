@@ -1,0 +1,12 @@
+<div class="container">
+  <ul>
+    <% @items.each do |item| %>
+    <li>
+      <a href="/item/<%= item.id %>"><%= item.name %></a>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+
+<!-- Set up page to display all the items, there is currently no link to get here! -->

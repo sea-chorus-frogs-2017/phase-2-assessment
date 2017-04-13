@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   end
 
   def has_already_bid?(item)
-    bids = Bid.where("bids.user_id = ?", self.id)
+    bids = Bid.where("user_id = ? AND item_id = ?", self.id, item.id)
     return nil if bids.empty?
     bids
   end

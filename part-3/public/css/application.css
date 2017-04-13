@@ -1,13 +1,23 @@
+body {
+  background-color: #95a5a6;
+}
+
 nav {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   padding: 10px;
+  background-color: #27ae60;
 }
 
 nav a {
   margin-left: 8px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .container {
+  background-color: #ecf0f1;
   margin: auto;
   border-style: solid;
   max-width: 500px;
@@ -48,4 +58,10 @@ nav a {
   color: blue;
   cursor: pointer;
   text-decoration: underline;
+}
+
+footer {
+  font-size: 12px;
+  position: fixed;
+  bottom: 0;
 }

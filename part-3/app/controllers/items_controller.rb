@@ -14,8 +14,13 @@ get '/items/new' do
 end
 
 get '/items/:id' do
-  @user = User.find(session[:user_id]) if session[:user_id]
   @item = Item.find(params[:id])
+  if session[:user_id]
+    @user = User.find(session[:user_id])
+    @user_bid = Bid.find_by(bidder_id: @user.id)
+  else
+    @user_bid = false;
+  end
   erb :'items/show'
 end
 

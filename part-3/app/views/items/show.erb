@@ -12,7 +12,9 @@
 <h3>Bidding</h3>
 <p>Number of bidders: <%= @item.bidders.length %> </p>
 
-<% if session[:user_id] %>
+<% if session[:user_id] && @user_bid %>
+  <p>You have already bid on this item. You bid $<%= @user_bid.amount %> on <%= @user_bid.created_at.to_formatted_s(:long) %></p>
+<% elsif session[:user_id] %>
   <div class='form'>
       <% if @bid && @bid.errors.any? %>
         <div id="add-bid-errors">

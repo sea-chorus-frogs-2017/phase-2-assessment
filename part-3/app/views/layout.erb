@@ -21,10 +21,17 @@
   <h1>DBC Auction!</h1>
   <nav>
     <ul>
+      <% if session[:user_id] %>
+        <form action="/users/logout" method='post'>
+          <input type="submit" value="Log out" />
+        </form>
+      <% else %>
         <li><a href="/users/new">Register</a></li>
         <li><a href="/login">Login</a></li>
+      <% end %>
     </ul>
   </nav>
+
 
 
 

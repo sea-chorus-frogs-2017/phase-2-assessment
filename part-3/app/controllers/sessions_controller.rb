@@ -1,5 +1,10 @@
 enable :sessions
 
+post '/users/logout' do
+  session.delete(:user_id)
+  redirect '/'
+end
+
 post '/users' do
   @user = User.new(params[:user])
   if @user.save!

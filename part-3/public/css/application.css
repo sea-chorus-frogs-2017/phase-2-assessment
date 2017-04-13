@@ -1,0 +1,50 @@
+.container {
+  overflow-y: scroll;
+  height: 100%;
+  display: block;
+  max-width: 65%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+html, body {
+  height: 90%;
+}
+
+body {
+  /*background-image: url("https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjotonGmqDTAhVK82MKHSgwCB8QjRwIBw&url=http%3A%2F%2Fwallpaperswide.com%2Flight_background-wallpapers.html&psig=AFQjCNEFGZN3KjdJaxiCfyru8p9Nw0eWIg&ust=1492130803708619");*/
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: #BFD8D2;
+}
+
+html * {
+  font-family: futura;
+}
+
+textarea {
+  border-radius: 5px;
+}
+
+form input {
+  border-radius: 5px;
+}
+
+nav a {
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+button {
+  border-radius: 5px;
+}
+
+nav {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+}

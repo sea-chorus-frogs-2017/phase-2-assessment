@@ -13,11 +13,9 @@
   <div class="bidding">
     <h1>Bidding</h1>
     <p>Number of bidders: <%= @item.bid_count %></p>
+    <!-- RAN OUT OF TIME:
+    If I had more time, I would have built an bid table that held a foreign key for the item to associate that bid, and a user id to associate which user bid on that item. that way I could tell the user whether or not he bid already -->
     <p>Place a bid for this item:</p>
-    <form action="/users/<%= @item.user.id %>/items/<%= @item.id %>/bid" method="post">
-      <input type="hidden" name="_method" value="PUT" />
-      <input type="number" name="bid"/>
-      <input type="submit" value="BID"/>
-    </form>
+    <p>Thank you for your bid.</p>
   </div>
 <% end %>

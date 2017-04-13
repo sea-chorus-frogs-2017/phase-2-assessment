@@ -42,3 +42,17 @@ get '/users/:user_id/items/:id' do
   @item = Item.find(params[:id])
   erb :'/items/show'
 end
+
+put '/users/:user_id/items/:id/bid' do
+  @item = Item.find(params[:id])
+  if @item.bid < params["bid"].to_i
+    @item.bid = params["bid"]
+    @item.bid_count = @item.bid_count + 1
+    @item.save!
+    # p item
+    erb :'/items/show_bid_item'
+  else
+    puts "This bid is too low"
+  redirect "/users/#{@item.user.id}/items/#{@item.id}"
+  end
+end

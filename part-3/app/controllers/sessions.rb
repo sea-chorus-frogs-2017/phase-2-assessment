@@ -1,8 +1,7 @@
-delete '/sessions' do
+get '/sessions' do
   session.destroy
-  sleep 2
   redirect '/'
-  p 'waited 2 secs'
+
 end
 
 post '/sessions' do

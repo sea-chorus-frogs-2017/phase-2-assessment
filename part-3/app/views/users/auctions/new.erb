@@ -1,0 +1,28 @@
+<div class='new-auction-div'>
+  <center>
+    <h2>Post Item for Auction</h2>
+    <% if @errors %>
+      <%= 'Some errors go here.' %>
+    <% end %>
+
+    <form id='new-auction' action='/auctions' method='post'>
+      <label for='auction[item]' class='label'>Item:</label>
+      <input type=text name='auction[item]' placeholder='Item Name' class='input'>
+      <br>
+
+      <label for='auction[item_condition]' class='label'>Item Condition:</label>
+      <input type=text name='auction[item_condition]' placeholder='Item Condition' class='input'>
+      <br>
+
+      <label for='auction[auction_start]' class='label'>Auction Start Date and Time:</label>
+      <input type=text name='auction[auction_start]' placeholder='Start' class='input'>
+      <br>
+
+      <label for='auction[auction_end]' class='label'>Auction End Date and Time:</label>
+      <input type=text name='auction[auction_end]' placeholder='End' class='input'>
+      <br>
+
+      <input type='submit' name='submit' value='Place Auction' class='submit'>
+    </form>
+  </center>
+</div>

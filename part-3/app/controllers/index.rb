@@ -2,10 +2,10 @@ get '/' do
   erb :index
 end
 
-get '/register' do
+get '/users/new' do
   erb :register
 end
 
-get '/login' do
+get '/users/login' do
   erb :login
 end

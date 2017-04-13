@@ -12,5 +12,5 @@ end
 
 get '/users/:username' do
   @username = params[:username]
-  erb :'user/show'
+  erb :'users/show'
 end

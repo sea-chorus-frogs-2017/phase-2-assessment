@@ -23,13 +23,13 @@
     <h1 class='site-title'>PJC Auction!</h1>
   </center>
     <% if !session[:user] %>
-      <a class='register-link' href='/register' >Register</a>
+      <a class='register-link' href='/users/new' >Register</a>
       <text> | </text>
-      <a class='login-link' href='/login' >Log In</a>
+      <a class='login-link' href='/users/login' >Log In</a>
     <% else %>
       <a class='user-link' href="/users/<%= session[:user].username %>"><%= session[:user].username %></a>
       <text> | </text>
-      <a class='logout-link' href='/' >Log Out</a>
+      <a class='logout-link' href='/sessions' >Log out</a>
     <% end %>
 </div>
   <%= yield %>

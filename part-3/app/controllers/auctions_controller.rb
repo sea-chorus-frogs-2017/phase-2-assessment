@@ -1,3 +1,8 @@
+get '/auctions' do
+  @auctions = Auction.all
+  erb :'auctions/index'
+end
+
 get '/auctions/new' do
   if session[:user_id]
     @auction = Auction.new

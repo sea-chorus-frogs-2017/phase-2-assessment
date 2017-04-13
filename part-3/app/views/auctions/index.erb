@@ -1,0 +1,14 @@
+<h2>Current Auctions</h2>
+<div class="container">
+  <% if active_auctions(@auctions) != [] %>
+    <ul>
+      <% active_auctions(@auctions).each do |auction| %>
+        <li>
+          <a href="/auctions/<%= auction.id %>"><%= auction.name %></a>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>Sorry. There are no current auctions right now. Why don't you <a href="/auctions/new">start one?</a></p>
+  <% end %>
+</div>

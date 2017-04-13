@@ -1,3 +1,21 @@
 #new-user-form {
   text-align: right;
 }
+
+body {
+  background-color: #416788;
+  text-align: center;
+
+}
+div {
+  color: #E0E0E2;
+}
+a {
+  color: #E0E0E2;
+}
+.navbar {
+  text-align:right;
+}
+.btn {
+  color: black;
+}

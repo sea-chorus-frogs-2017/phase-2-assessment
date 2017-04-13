@@ -1,19 +1,16 @@
 var Classroom = function(students = []) {
   this.students = students;
-  this.find = function(searchName) {
 
+  this.find = function(searchName){
 
-    this.students.find(nameMatch);
+    // var nameMatch = function(student, searchName) {
+    //   if (student.firstname === searchName) {return student};
+    // }
 
-    function nameMatch(searchName) {
-      return this.student.name === searchName;
+    this.students.forEach(function(student) {
+      if (student.firsName === searchName) {return student}
+    });
 
-    }
-
-    // var matches = this.students.filter(function(student) {
-    //   return student.name === searchName;
-    // });
-    // return matches;
   }
 
   this.honorRollStudents = function(){
@@ -23,3 +20,20 @@ var Classroom = function(students = []) {
   return honorRoll;
 }
 }
+
+//
+// var students = this.students
+// console.log(students)
+// for (student in students) {
+//   console.log(student.firstName)
+//   if (student.firstName === searchName) {return student}
+// }
+
+// this.students.find(nameMatch);
+// function nameMatch(searchName) {
+//   return this.student.name === searchName;
+// }
+// var matches = this.students.filter(function(student) {
+//   return student.name === searchName;
+// });
+// return matches;

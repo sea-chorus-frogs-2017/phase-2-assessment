@@ -1,0 +1,9 @@
+<h2>Current Auctions!</h2>
+
+<% @items.each do |item| %>
+  <% if (item.start_time < DateTime.now && item.end_time > DateTime.now) %>
+    <ul>
+      <li><a href="/users/<%= item.user.id %>/items/<%= item.id %>"> <%= item.name %></a></li>
+    </ul>
+  <% end %>
+<% end %>

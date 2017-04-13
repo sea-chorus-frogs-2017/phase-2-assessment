@@ -10,15 +10,11 @@
   <% @user.items.each do |item| %>
     <ol>
       <ul>
-        <li>Item Name: <%= item.name %></li>
-        <li>Condition: <%= item.condition %></li>
-        <li>Description: <%= item.description %></li>
-        <li>Start Time: <%= item.start_time %></li>
-        <li>End Time: <%= item.end_time %></li>
-        <li>Current Bid: $<%= item.bid %></li>
-        <li>Listing Author: <%= item.user.username %></li>
+        <li>Item Name: <a href="/users/<%= @user.id %>/items/<%= item.id %>"> <%= item.name %></li>
       </ul>
-      <span><a href="/users/<%= @user.id %>/items/<%= item.id %>/edit">Update Item</a></span>
+      <span>
+        <a href="/users/<%= @user.id %>/items/<%= item.id %>/edit">Update Item</a>
+      </span>
       <span>
         <form action="/users/<%= @user.id %>/items/<%= item.id %>" method="post">
           <input type="hidden" name="_method" value="DELETE" />

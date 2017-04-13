@@ -1,8 +1,9 @@
 get '/' do
+  @items = Item.all
   if session[:user_id]
     @user = session[:user_id]
-    erb :'/users/index'
+    erb :index
   else
-    erb :'/users/index'
+    erb :index
   end
 end

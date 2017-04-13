@@ -1,6 +1,11 @@
 get '/users/:user_id/items/new' do
-  @user_id = params[:user_id]
-  erb :'/items/new'
+  if session[:user_id] == params[:user_id]
+    @user = User.find(params[:user_id])
+    @user_id = params[:user_id]
+    erb :'/items/new'
+  else
+    redirect '/'
+  end
 end
 
 post '/users/:user_id/items' do
@@ -11,9 +16,13 @@ post '/users/:user_id/items' do
 end
 
 get '/users/:user_id/items/:id/edit' do
-  @item = Item.find(params[:id])
-  @user = User.find(params[:user_id])
-  erb :'/items/edit'
+  if session[:user_id] == params[:user_id]
+   @item = Item.find(params[:id])
+    # @user = User.find(params[:user_id])
+    erb :'/items/edit'
+  else
+    redirect "/"
+  end
 end
 
 put '/users/:user_id/items/:id' do
@@ -26,4 +35,10 @@ delete '/users/:user_id/items/:id' do
   item = Item.find(params[:id])
   item.destroy
   redirect to "/users/#{params[:user_id]}"
+end
+
+get '/users/:user_id/items/:id' do
+  @user = User.find(params[:user_id])
+  @item = Item.find(params[:id])
+  erb :'/items/show'
 end

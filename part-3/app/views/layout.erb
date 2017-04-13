@@ -20,7 +20,9 @@
 <body>
 <nav>
 <span><h1>DBC Auction!</h1></span>
-<% if @user %>
+<span><a href="/">DBC-Bay</a> ||</span>
+<% if session[:user_id] %>
+<% @user = User.find(session[:user_id]) %>
   <span><a href="/users/<%= @user.id %>"><%= @user.username %></a> ||</span>
   <span><form action="/sessions" method="post">
     <input type="hidden" name="_method" value="DELETE" />

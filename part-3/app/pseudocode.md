@@ -39,3 +39,26 @@
 
 ## If you've made it here, congrats...
 
+## Release 6 - Appropriate Behaviors per User and Route
+-as a logged in User, I can list a new item
+-as a logged in User, I can edit my specific item
+-as a logged in User, I can delete my specific item
+-as any User, I can view user profiles
+-as any User, I can view any item
+
+## Release 7 - Browsing items
+-as any User, I can view all items currently on auction on homepage
+-as any User, I can view the details of that auction item
+-as any User, I can click any item on homepage to learn more
+-as any User, I want to see item name, condition, description, auction end date
+
+## Release 8 - Bidding
+-as a logged in User, I can view auction item details
+-as a logged in User, I can view bids on that item
+-as a logged in User, I can view number of bidders
+-as a logged in User, I can view the bid form on that item detail
+-as a logged in User, I can successfully bid
+-as a logged in User, who successfully bid, I can see item show page with it saying thank you, and details of my bid
+-as a logged in User, if I unsuccessfully bid, then I am told of my errors
+
+## Release 9 - Style

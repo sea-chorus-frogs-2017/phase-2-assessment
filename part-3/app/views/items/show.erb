@@ -1,0 +1,7 @@
+<h1><%= @item.name %></h1>
+<ul>
+  <li>Condition: <%= @item.condition %></li>
+  <li>Description: <%= @item.description %></li>
+  <li>End Time: <%= @item.end_time %></li>
+  <li>Listing Author: <a href="/users/<%= @item.user.id %>"><%= @item.user.username %></a></li>
+</li>

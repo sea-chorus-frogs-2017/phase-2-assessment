@@ -1,0 +1,14 @@
+<div class="item-details">
+  <h2><%= @item.name %></h2>
+  <section class="item-detail">
+    Description:<br>
+    <%= @item.description %>
+  </section>
+  <section class="item-detail">
+    Condition:<br>
+    <%= @item.condition %>
+  </section>
+  <section class="item-detail">
+    <%= @item.end_time.strftime("Auction Ends on %B %d, %Y\n at %l:%M:%S %P.") %>
+  </section>
+</div>

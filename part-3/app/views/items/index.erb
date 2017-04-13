@@ -3,7 +3,7 @@
 <ul>
   <% Item.all.each do |item| %>
     <% if item.end_time > Time.now %>
-      <a href="/items"><li><%= item.name %></li></a>
+      <a href="/items/<%= item.id %>"><li><%= item.name %></li></a>
     <% end %>
   <% end %>
 </ul>

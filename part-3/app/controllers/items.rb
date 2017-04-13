@@ -13,6 +13,12 @@ post "/items" do
   end
 end
 
+get '/items/:id' do
+  @item = Item.find_by(id: params[:id])
+  redirect "/" unless @item
+  erb :'/items/show'
+end
+
 delete '/items/:id' do
   @item = Item.find(params[:id])
   redirect "/" unless @item && session_user_id == @item.user_id

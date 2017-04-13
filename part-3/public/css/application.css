@@ -32,3 +32,12 @@ li.errors {
   padding: 0;
   cursor: pointer;
 }
+
+.item-details {
+  margin-left: 75px;
+  margin-top: 50px;
+}
+
+.item-detail {
+  margin-bottom: 20px;
+}

@@ -14,7 +14,7 @@ require 'pathname'
 require 'pg'
 require 'active_record'
 require 'logger'
-require 'sinatra/flash'
+# require 'sinatra/flash' # couldnt get this to work
 
 require 'sinatra'
 require "sinatra/reloader" if development?

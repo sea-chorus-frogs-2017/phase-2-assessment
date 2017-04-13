@@ -6,10 +6,6 @@ class User < ActiveRecord::Base
  validates :username, :email, :password_hash, presence: true
  validates :username, :email, uniqueness: true
 
-def errors
-
-end
-
  def password
    @password ||= Password.new(password_hash)
  end

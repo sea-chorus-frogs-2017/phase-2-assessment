@@ -15,7 +15,7 @@ post '/login' do
     session[:user_id] = @user.user_id
     redirect '/auctions'
   else
-    flash[:error] = "You did something wrong it's your fault not mine!"
+    # flash[:error] = "You did something wrong it's your fault not mine!" /couldnt get this to work
     redirect '/login'
   end
 end

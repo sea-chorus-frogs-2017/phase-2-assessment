@@ -28,3 +28,5 @@ get '/users/:id' do
     redirect '/'
   end
 end
+
+# Didn't implement Errors for Login & logout

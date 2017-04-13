@@ -16,6 +16,11 @@ end
 get '/users/:id' do
   if session[:user_id]
     @user = User.find(params[:id])
+    if @user_items = Item.find_by(user_id: params[:id])
+      @items
+    else
+      @items = nil
+    end
     erb :'users/show'
   else
     redirect '/'

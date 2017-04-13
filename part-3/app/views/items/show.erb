@@ -10,14 +10,16 @@
   <% end %>
   <hr>
 
-  <p><strong>Description:</strong></p>
-  <%= @item.description %>
+  <div class='box'>
+    <p><strong>Description:</strong></p>
+    <%= @item.description %>
 
-  <p><strong>Condition:</strong></p>
-  <%= @item.condition %>
+    <p><strong>Condition:</strong></p>
+    <%= @item.condition %>
 
-  <hr>
+    <hr>
 
-  <p>Auction Ends on <%= @item.ends_at %>.</p>
+    <p><em>Auction Ends on <%= @item.ends_at %>.</em></p>
+  </div>
 
 </div>

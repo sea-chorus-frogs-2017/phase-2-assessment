@@ -1,13 +1,17 @@
+body {
+  background-color: #C3D4E5;
+}
+
 .container {
   width: 800px;
   margin: 0 auto;
 }
 
-.auction {
+.box {
   border: 3px dotted grey;
   padding: 20px;
+  background-color: #E1E6EA;
 }
-
 
 .errors {
   padding: 2px;

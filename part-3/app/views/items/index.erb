@@ -1,7 +1,6 @@
 <div class='container'>
 
   <h2>Current Auctions:</h2>
-  <!-- Time logic to restrict auctions is not yet implemented -->
 
   <% if session['user_id'] %>
     <% user = User.find(session['user_id']) %>
@@ -11,12 +10,15 @@
   <% end %>
   <hr>
 
-  <ol>
-    <% @items.each do |item| %>
-      <li>
-        <a href='/items/<%= item.id %>'><%= item.name %></a>
-      </li>
-    <% end %>
-  </ol>
+  <!--TODO: Time logic to restrict auctions is not yet implemented -->
+  <div class='box'>
+    <ol>
+      <% @items.each do |item| %>
+        <li>
+          <a href='/items/<%= item.id %>'><%= item.name %></a>
+        </li>
+      <% end %>
+    </ol>
+  </div>
 
 </div>

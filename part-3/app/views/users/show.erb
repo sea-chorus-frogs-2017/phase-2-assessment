@@ -11,9 +11,11 @@
     <% end %>
     <hr>
 
-    <div class='auction'>
+    <div class='box'>
       <h4>Your Auctions</h4>
       <a href='/users/<%= @user.id %>/items/new'>+ add an auction</a>
+      <br><br>
+
       <ol>
         <% @user.items.each do |item| %>
           <li>

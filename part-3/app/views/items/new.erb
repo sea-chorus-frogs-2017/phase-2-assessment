@@ -11,6 +11,7 @@
     <% end %>
     <hr>
 
+  <div class='box'>
     <form action='/users/<%= @user.id %>/items' method='post'>
       Item Name:<br>
         <input type='text' name='item[name]' placeholder='Item Name'>
@@ -40,6 +41,7 @@
     <ul>
       <li class='errors'><%= @incorrect_item %></li>
     </ul>
+  </div>
 
   <% else %>
     <p>You don't have access to this page.</p>

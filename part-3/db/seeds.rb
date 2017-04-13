@@ -1,5 +1,6 @@
 require 'faker'
 
+# Creating random users
 50.times do
   User.create!( username: Faker::Internet.user_name,
                 email: Faker::Internet.email,
@@ -8,6 +9,7 @@ end
 
 conditions = ["New", "Like New", "Good", "Fair", "Poor"]
 
+# Creating random auction items
 100.times do
   Item.create!( name: Faker::Book.title,
                 condition: conditions.sample,

@@ -2,6 +2,7 @@
 
   <h3>Register:</h3>
 
+  <!-- Changes links based on sessions -->
   <% if session['user_id'] %>
     <% user = User.find(session['user_id']) %>
     <a href="/users/<%= user.id %>"><%= user.username %></a> | <a href="/session/delete">Logout</a>
@@ -10,21 +11,30 @@
   <% end %>
   <hr>
 
-  <% if @user.errors.any? %>
-    <section class='errors'>
-      <ul>
-        <% @user.errors.full_messages.each do |error| %>
-          <li><%= error %></li>
-        <% end %>
-      </ul>
-    </section>
-  <% end %>
+  <div class='box'>
+    <% if @user.errors.any? %>
+      <section class='errors'>
+        <ul>
+          <% @user.errors.full_messages.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      </section>
+    <% end %>
 
-  <form action='/users' method='POST'>
-    Username: <input type='text' name='user[username]'>
-    Email: <input type='text' name='user[email]'>
-    Password: <input type='password' name='user[password]'>
-    <input type='submit' value='Register'>
-  </form>
+    <form action='/users' method='POST'>
+      <p>Username:</p>
+      <input type='text' name='user[username]'>
+
+      <p>Email:</p>
+      <input type='text' name='user[email]'>
+
+      <p>Password:</p>
+      <input type='password' name='user[password]'>
+
+      <br><br>
+      <input type='submit' value='Register'>
+    </form>
+  </div>
 
 </div>

@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   include BCrypt
 
   has_many :auctions, foreign_key: :auctioner_id
+  has_many :bids, foreign_key: :bidder_id
 
   validates :email, :username, uniqueness: true
   validates :email, :username, :password_hash, presence: true

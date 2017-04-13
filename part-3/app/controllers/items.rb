@@ -3,6 +3,11 @@ get '/items' do
   erb :'items/index'
 end
 
+get '/items/:id' do
+  @item = Item.find(params[:id])
+  erb :'items/show'
+end
+
 get '/users/:id/items/new' do
   @user = User.find(params[:id])
   erb :'items/new'

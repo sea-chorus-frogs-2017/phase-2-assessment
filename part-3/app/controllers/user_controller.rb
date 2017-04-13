@@ -1,18 +1,10 @@
 get '/users/new' do
   @user = User.new
-  if request.xhr?
-    status 200
-  else
-    erb :'/users/new'
-  end
+  erb :'/users/new'
 end
 
 get '/users/login' do
-  if request.xhr?
-    status 200
-  else
     erb :'/users/_login_form', locals: {errors: false}
-  end
 end
 
 get '/users/logout' do
@@ -23,11 +15,7 @@ end
 
 get '/users/login' do
   @user = User.new
-  if request.xhr?
-    status 200
-  else
-    erb :'/users/_login_form'
-  end
+  erb :'/users/_login_form'
 end
 
 get '/users/:id' do
@@ -41,7 +29,6 @@ post '/users/login' do
     session[:username] = user.username
     redirect to ('/')
   else
-
     erb :'users/_login_form', locals: {errors: true}
   end
 end

@@ -1,6 +1,6 @@
 <form id="bid-form" class="form" action="/bids" method="post">
   <label>Amount ($):</label>
-  <input class="form-input" type="text" name="bid[amount]">
+  <input class="form-input" type="text" name="bid[amount]" value="<%= bid.try(:amount)%>">
   <input class="form-submit" type="submit" value="Place Bid">
   <input type="hidden" name="bid[auction_id]" value="<%= auction.id %>">
 </form>

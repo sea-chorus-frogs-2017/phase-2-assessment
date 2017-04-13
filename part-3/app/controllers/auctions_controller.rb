@@ -1,3 +1,3 @@
 get '/auctions' do
- erb :index
+ erb :'index'
 end

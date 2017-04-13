@@ -2,7 +2,6 @@ enable :sessions
 
 post '/users' do
   @user = User.new(params[:user])
-  p @user
   if @user.save!
     session[:user_id] = @user.id
     redirect '/login'

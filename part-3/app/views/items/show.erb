@@ -12,35 +12,19 @@
 <h3>Bidding</h3>
 <p>Number of bidders: <%= @item.bidders.length %> </p>
 
-<div class='form'>
-  <center>
-    <% if @bid && @item.errors.any? %>
-      <div id="add-item-errors">
-        <% @item.errors.full_messages.each do |error| %>
-          <p><%= error %></p>
-        <% end %>
-      </div>
-    <% end %>
+<% if session[:user_id] %>
+  <div class='form'>
+      <% if @bid && @bid.errors.any? %>
+        <div id="add-bid-errors">
+          <% @bid.errors.full_messages.each do |error| %>
+            <p><%= error %></p>
+          <% end %>
+        </div>
+      <% end %>
 
-    <form id="new-item-form" action='/items' method="post">
-      <label>Item Name:</label><br>
-      <input type='text' name='item[name]' placeholder="Item Name"><br><br>
-      <label>Condition:</label><br>
-      <select name="item[condition]">
-        <option value="Poor">Poor</option>
-        <option value="Fair">Fair</option>
-        <option value="Good" selected>Good</option>
-        <option value="Great">Great</option>
-      </select><br><br>
-      <label>Starts At:</label><br>
-      <input type='text' name='item[auction_start]' placeholder="Auction Start Time"><br><br>
-      <label>Ends At:</label><br>
-      <input type='text' name='item[auction_end]' placeholder="Auction End Time"><br><br>
-      <label>Description:</label><br>
-      <textarea rows="5" cols="50" name='item[description]'placeholder="Item Description"></textarea>
-      <br><br>
-      <input type='submit' value='List Item for Auction'>
-    </form>
-  </center>
-</div>
-
+      <form id="new-bid-form" action="/users/<%= @user.id %>/items/<%= @item.id %>/bids" method="post">
+        $ <input type='text' name='bid[amount]' placeholder="Bid Amount">
+        <input type='submit' value='Place Bid'>
+      </form>
+  </div>
+<% end %>

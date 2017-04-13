@@ -3,6 +3,11 @@ get '/auctions' do
   erb :'auctions/index'
 end
 
+get '/auctions/:id' do
+  @auction = Auction.find(params[:id])
+  erb :'auctions/show'
+end
+
 get '/auctions/new' do
   if session[:user_id]
     @auction = Auction.new

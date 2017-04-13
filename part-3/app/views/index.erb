@@ -1,4 +1,12 @@
+<div class='post-container'>
+  <% @items.each do |item| %>
 
+    <article id="<%= item.id %>">
+      <h2><a href='/items/<%= item.id %>'><%= item.name %></a></h2>
+    </article>
+
+  <% end %>
+</div>
 
 
 

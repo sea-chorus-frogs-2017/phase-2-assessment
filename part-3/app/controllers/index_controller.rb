@@ -1,3 +1,4 @@
 get '/' do
-  erb :'/index'
+  @items = Item.all
+  erb :'index'
 end

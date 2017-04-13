@@ -7,11 +7,13 @@
     <% @user.items.each do |item| %>
       <div>
         <p><%=item.name%></p>
+        <%if item.user_id == @user.id%>
         <a href = "/users/<%=@user.username%>/items/<%=item.id%>/edit">edit</a>
         <form  method="post" action="/users/<%=@user.username%>/items/<%=item.id%>">
           <input name="_method" type="hidden" value="delete" />
           <input type = "submit" value = "Delete">
         </form>
+        <%end%>
       </div>
     <%end%>
   </div>

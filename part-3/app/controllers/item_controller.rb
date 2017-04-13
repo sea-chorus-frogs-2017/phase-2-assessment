@@ -1,4 +1,7 @@
-
+get '/items/:id' do
+  @item = Item.find(params[:id])
+  erb :'/item/show'
+end
 
 get '/users/:user_id/items/:item_id/edit' do
   @user = User.find_by(username: params[:user_id])
